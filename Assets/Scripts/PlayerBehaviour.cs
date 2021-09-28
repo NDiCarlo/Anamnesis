@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
 
     public float speed = 5;
+
+    public GameObject scenePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +41,10 @@ public class PlayerBehaviour : MonoBehaviour
         movement *= Time.fixedDeltaTime * speed;
 
         rb.MovePosition(rb.position + movement);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        scenePanel.gameObject.SetActive(true);
     }
 }
