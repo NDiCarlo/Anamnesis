@@ -188,6 +188,7 @@ public class DialogueBehaviour : MonoBehaviour
     }
     public void LoadGameplayScene()
     {
+        //change
         SceneManager.LoadScene("GameplayScene");
     }
 
