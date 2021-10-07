@@ -43,7 +43,6 @@ public class DialogueBehaviour : MonoBehaviour
     public Text dialogueText17;
     public Button dialogueButton17;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +52,7 @@ public class DialogueBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ContinueText()
@@ -191,5 +190,4 @@ public class DialogueBehaviour : MonoBehaviour
         //change
         SceneManager.LoadScene("GameplayScene");
     }
-
 }
