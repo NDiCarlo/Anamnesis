@@ -30,4 +30,26 @@ public class StationaryBulletBehaviour : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 10f);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedObject = collision.gameObject;
+
+        if (collidedObject.name.Contains("Walls"))
+        {
+            Destroy(gameObject);
+        }
+        if (collidedObject.name.Contains("Player"))
+        {
+            PlayerBehaviour pb = GameObject.FindObjectOfType<PlayerBehaviour>();
+
+            pb.health--;
+
+            Destroy(gameObject);
+        }
+        if (collidedObject.name.Contains("MoveTowardEnemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
