@@ -5,11 +5,16 @@ using UnityEngine;
 public class MoveTowardsEnemyBehaviour : MonoBehaviour
 {
     private Transform player;
+
+    public int health;
+
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         GameObject playerGO = GameObject.Find("Player");
         player = playerGO.transform;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -25,5 +30,31 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
                                                player.position,
                                                Time.deltaTime * speed);
         transform.position = newPos;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedObject = collision.gameObject;
+
+        if (collidedObject.name.Contains("Player"))
+        {
+            PlayerBehaviour pb = GameObject.FindObjectOfType<PlayerBehaviour>
+                ();
+
+            pb.health--;
+        }
+        if (collidedObject.name.Contains("Bullet"))
+        {
+            health--;
+
+            if (health == 0)
+            {
+                Destroy(gameObject);
+                GameController gc = GameObject.FindObjectOfType<GameController>
+                ();
+
+                gc.numberofEnemies--;
+            }
+        }
     }
 }

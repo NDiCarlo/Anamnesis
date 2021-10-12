@@ -9,9 +9,9 @@ public class StationaryEnemyBehaviour : MonoBehaviour
 
     public GameObject bullet;
 
-    public Transform firePoint;
-
     public Transform player;
+
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +28,27 @@ public class StationaryEnemyBehaviour : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, transform.position, transform.rotation);
             nextFire = Time.time + fireRate;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedObject = collision.gameObject;
+
+        if (collidedObject.name.Contains("Bullet"))
+        {
+            health--;
+
+            if (health == 0)
+            {
+                GameController gc = GameObject.FindObjectOfType<GameController>
+                ();
+
+                gc.numberofEnemies--;
+
+                Destroy(gameObject);
+            }
         }
     }
 }

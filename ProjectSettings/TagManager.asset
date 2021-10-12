@@ -11,13 +11,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - MoveTowardsEnemy
+  - StationaryEnemyBullet
+  - Walls
+  - Enemy Walls
+  - StationaryEnemy
+  - Bullet
+  - Player
   - 
   - 
   - 
