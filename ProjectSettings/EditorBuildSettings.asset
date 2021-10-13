@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameplayScene.unity
     guid: 82c2b89ba6222a0478bee61b78ea75b3
+  - enabled: 1
+    path: Assets/Scenes/LoverLevelOpenScene.unity
+    guid: 2341dc6c10575ae43aba6eccd0b1ec1c
   m_configObjects: {}

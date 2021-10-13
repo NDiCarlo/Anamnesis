@@ -190,4 +190,11 @@ public class DialogueBehaviour : MonoBehaviour
         //change
         SceneManager.LoadScene("GameplayScene");
     }
+    public void LoadGameplayScene1()
+    {
+        //change
+        SceneManager.LoadScene("LoverLevelOpenScene");
+    }
+
+
 }
