@@ -8,11 +8,14 @@ public class StationaryBulletBehaviour : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public float lifetime;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         findPlayer();
+        Destroy(gameObject, lifetime);
     }
 
     // Update is called once per frame

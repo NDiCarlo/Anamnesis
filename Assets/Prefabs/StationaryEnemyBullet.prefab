@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  lifetime: 10
   target: {fileID: -5372912527952847339, guid: a703b099ac120dd4da4f6b2471b9720d, type: 3}
 --- !u!60 &-3982549394051044066
 PolygonCollider2D:

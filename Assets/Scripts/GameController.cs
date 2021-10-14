@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     public GameObject ThirdRoomBarricade;
 
     public int numberofEnemies = 18;
+
+    private int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,11 @@ public class GameController : MonoBehaviour
 
             newEnemy.transform.position = new Vector2(Random.Range(-62f, -26),
                                             Random.Range(54, 43));
+
+            MoveTowardsEnemyBehaviour mt = GameObject.FindObjectOfType<MoveTowardsEnemyBehaviour>
+                ();
+
+            mt.health = 2;
         }
     }
     public void spawnStationaryEnemy()
@@ -64,6 +71,11 @@ public class GameController : MonoBehaviour
 
             newEnemy.transform.position = new Vector2(Random.Range(-64f, -25),
                                             Random.Range(55.46499f, 55.46499f));
+
+            StationaryEnemyBehaviour se = GameObject.FindObjectOfType<StationaryEnemyBehaviour>
+                ();
+
+            se.health = 1;
         }
     }
     public void spawnMoveTowardsEnemy2()
@@ -76,6 +88,11 @@ public class GameController : MonoBehaviour
 
             newEnemy.transform.position = new Vector2(Random.Range(13f, 50),
                                             Random.Range(67, 52));
+
+            MoveTowardsEnemyBehaviour mt = GameObject.FindObjectOfType<MoveTowardsEnemyBehaviour>
+                ();
+
+            mt.health = 4;
         }
     }
     public void spawnStationaryEnemy2()
@@ -88,6 +105,11 @@ public class GameController : MonoBehaviour
 
             newEnemy.transform.position = new Vector2(Random.Range(21f, 40),
                                             Random.Range(67.5f, 67.5f));
+
+            StationaryEnemyBehaviour se = GameObject.FindObjectOfType<StationaryEnemyBehaviour>
+                ();
+
+            se.health = 2;
         }
     }
     public void spawnMoveTowardsEnemy3()
@@ -100,6 +122,11 @@ public class GameController : MonoBehaviour
 
             newEnemy.transform.position = new Vector2(Random.Range(81f, 130f),
                                             Random.Range(55f, 42f));
+
+            MoveTowardsEnemyBehaviour mt = GameObject.FindObjectOfType<MoveTowardsEnemyBehaviour>
+                ();
+
+            mt.health = 6;
         }
     }
     public void spawnStationaryEnemy3()
@@ -112,6 +139,11 @@ public class GameController : MonoBehaviour
 
             newEnemy.transform.position = new Vector2(Random.Range(95f, 116f),
                                             Random.Range(55f, 55f));
+
+            StationaryEnemyBehaviour se = GameObject.FindObjectOfType<StationaryEnemyBehaviour>
+                ();
+
+            se.health = 3;
         }
     }
 }

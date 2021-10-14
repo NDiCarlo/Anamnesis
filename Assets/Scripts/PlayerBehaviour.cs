@@ -19,9 +19,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     public GameObject Bullet;
 
-    public float TimeBetweenShots;
+    public float fireRate;
 
-    public GameObject bulletarrowKeys;
+    public float nextFire;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,6 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         Shooting();
-        Shooting2();
     }
 
     void FixedUpdate()
@@ -57,44 +56,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Shooting()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
         {
-            GameObject go = (GameObject)Instantiate(bulletarrowKeys,
-                transform.position, transform.rotation);
-
-            go.GetComponent<ArrowKeyBulletBehaviour>().ySpeed = 27f;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            GameObject go = (GameObject)Instantiate(bulletarrowKeys,
-                transform.position, transform.rotation);
-
-            go.GetComponent<ArrowKeyBulletBehaviour>().xSpeed = -27;
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            GameObject go = (GameObject)Instantiate(bulletarrowKeys,
-                 transform.position, transform.rotation);
-
-            go.GetComponent<ArrowKeyBulletBehaviour>().ySpeed = -27f;
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            GameObject go = (GameObject)Instantiate(bulletarrowKeys,
-                transform.position, transform.rotation);
-
-            go.GetComponent<ArrowKeyBulletBehaviour>().xSpeed = 27f;
+            nextFire = Time.time + fireRate;
+           Instantiate(Bullet, transform.position, transform.rotation);
         }
     }
-
-    void Shooting2()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(Bullet, transform.position, transform.rotation);
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collidedObject = collision.gameObject;

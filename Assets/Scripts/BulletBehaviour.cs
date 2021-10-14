@@ -6,21 +6,28 @@ public class BulletBehaviour : MonoBehaviour
 {
     public float Lifetime;
 
-    private Vector2 target;
+    private Vector3 target;
+
+    private float Angle;
 
     public float speed;
+
+    Vector3 mousePosition;
+
+    private Vector3 direction;
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, Lifetime);
-        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0f;
+        direction = (mousePosition - transform.position).normalized;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target,
-            speed * Time.deltaTime);
+        transform.position += direction * speed * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -9,6 +9,8 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
     public int health;
 
     private Rigidbody2D rb;
+
+    public GameObject MoveTowards;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,8 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
                 ();
 
             pb.health--;
+
+
         }
         if (collidedObject.name.Contains("Bullet"))
         {
@@ -55,6 +59,7 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
 
                 gc.numberofEnemies--;
             }
+
         }
     }
 }
