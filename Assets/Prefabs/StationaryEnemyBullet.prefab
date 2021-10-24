@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2986063882228506992}
   - component: {fileID: 5385288921800202097}
-  - component: {fileID: 5917176632642618772}
+  - component: {fileID: 55180140335416232}
   - component: {fileID: -3982549394051044066}
   - component: {fileID: 5924932646883875942}
   m_Layer: 7
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5917176632642618772
+--- !u!114 &55180140335416232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  lifetime: 10
+  lifetime: 5
   target: {fileID: -5372912527952847339, guid: a703b099ac120dd4da4f6b2471b9720d, type: 3}
 --- !u!60 &-3982549394051044066
 PolygonCollider2D:

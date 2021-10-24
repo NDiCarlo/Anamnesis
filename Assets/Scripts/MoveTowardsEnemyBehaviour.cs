@@ -11,6 +11,8 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
     private Rigidbody2D rb;
 
     public GameObject MoveTowards;
+
+    public float range;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +30,13 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
     public float speed = 0.5f;
     void enemyMovement()
     {
-        Vector3 newPos = Vector3.MoveTowards(transform.position,
+        if (Vector2.Distance(transform.position, player.position) <= range)
+        {
+            Vector3 newPos = Vector3.MoveTowards(transform.position,
                                                player.position,
                                                Time.deltaTime * speed);
-        transform.position = newPos;
+            transform.position = newPos;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,8 +50,8 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
 
             pb.health--;
 
-
         }
+
         if (collidedObject.name.Contains("Bullet"))
         {
             health--;

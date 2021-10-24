@@ -22,6 +22,14 @@ public class PlayerBehaviour : MonoBehaviour
     public float fireRate;
 
     public float nextFire;
+
+    public GameObject TriggerHallwayEnemies;
+
+    public GameObject TriggerHallwayEnemies2;
+
+    public GameObject TriggerHallwayEnemies3;
+
+    public GameObject TriggerBoss;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +67,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-           Instantiate(Bullet, transform.position, transform.rotation);
+            Instantiate(Bullet, transform.position, transform.rotation);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,6 +101,37 @@ public class PlayerBehaviour : MonoBehaviour
             gc.spawnMoveTowardsEnemy3();
             gc.spawnStationaryEnemy3();
             Destroy(TriggerThirdRoomEnemies);
+        }
+        if (collidedObject.name.Contains("Trigger Hallway Enemies"))
+        {
+            GameController gc = GameObject.FindObjectOfType<GameController>
+                ();
+            gc.spawnMoveTowardsEnemy5();
+            gc.spawnStationaryEnemy5();
+            Destroy(TriggerHallwayEnemies);
+        }
+        if (collidedObject.name.Contains("Trigger Hallway 2 Enemies"))
+        {
+            GameController gc = GameObject.FindObjectOfType<GameController>
+                ();
+            gc.spawnMoveTowardsEnemy6();
+            gc.spawnStationaryEnemy6();
+            Destroy(TriggerHallwayEnemies2);
+        }
+        if (collidedObject.name.Contains("Trigger Hallway 3 Enemies"))
+        {
+            GameController gc = GameObject.FindObjectOfType<GameController>
+                ();
+            gc.spawnMoveTowardsEnemy7();
+            gc.spawnStationaryEnemy7();
+            Destroy(TriggerHallwayEnemies3);
+        }
+        if (collidedObject.name.Contains("Boss Trigger"))
+        {
+            GameController gc = GameObject.FindObjectOfType<GameController>
+                ();
+            gc.spawnBossBehaviour();
+            Destroy(TriggerBoss); ;
         }
     }
 }

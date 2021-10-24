@@ -25,6 +25,7 @@ public class StationaryBulletBehaviour : MonoBehaviour
     }
 
     public PlayerBehaviour target;
+
     private Vector2 moveDirection;
     void findPlayer()
     {
@@ -33,7 +34,6 @@ public class StationaryBulletBehaviour : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 10f);
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collidedObject = collision.gameObject;
@@ -51,6 +51,10 @@ public class StationaryBulletBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
         if (collidedObject.name.Contains("MoveTowardEnemy"))
+        {
+            Destroy(gameObject);
+        }
+        if (collidedObject.name.Contains("Bullet"))
         {
             Destroy(gameObject);
         }

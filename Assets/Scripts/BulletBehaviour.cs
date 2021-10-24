@@ -43,5 +43,20 @@ public class BulletBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collidedObject.name.Contains("MoveTowardEnemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collidedObject.name.Contains("StationaryEnemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collidedObject.name.Contains("StationaryEnemyBullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
