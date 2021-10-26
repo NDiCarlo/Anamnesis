@@ -21,6 +21,8 @@ public class LoverLevelBossBehaviour : MonoBehaviour
     public float fireRate;
 
     public float nextFire;
+
+    public SpriteRenderer loverLevelBoss;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,7 @@ public class LoverLevelBossBehaviour : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) <= range)
         {
             DamageAOE.SetActive(true);
+            
         }
         if (Vector2.Distance(transform.position, player.position) >= range)
         {
@@ -64,9 +67,27 @@ public class LoverLevelBossBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
+        loverLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.10f);
+
+        loverLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.10f);
+
+        loverLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.5f);
+
+        loverLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.5f);
+
         isMoving = false;
 
         attack();
+
+        loverLevelBoss.color = Color.red;
 
         yield return new WaitForSeconds(.2f);
 

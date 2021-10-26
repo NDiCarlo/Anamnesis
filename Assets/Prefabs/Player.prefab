@@ -208,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7838813858540307374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.9, y: -0.1, z: 0}
+  m_LocalPosition: {x: 36.09, y: -0.18, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 7838813858337453328}
@@ -279,14 +279,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  scenePanel: {fileID: 0}
+  BossPanel: {fileID: 0}
   TriggerFirstRoomEnemies: {fileID: 0}
   TriggerSecondRoomEnemies: {fileID: 0}
   TriggerThirdRoomEnemies: {fileID: 0}
   health: 0
   Bullet: {fileID: 0}
-  TimeBetweenShots: 0
-  bulletarrowKeys: {fileID: 0}
+  fireRate: 0
+  nextFire: 0
+  TriggerHallwayEnemies: {fileID: 0}
+  TriggerHallwayEnemies2: {fileID: 0}
+  TriggerHallwayEnemies3: {fileID: 0}
+  TriggerBoss: {fileID: 0}
+  EnchantWeaponPanel: {fileID: 0}
+  weaponSpear: {fileID: 0}
+  enableSpear: 0
 --- !u!50 &7838813858540307361
 Rigidbody2D:
   serializedVersion: 4

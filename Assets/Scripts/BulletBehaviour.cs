@@ -58,5 +58,24 @@ public class BulletBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collidedObject.name.Contains("MoveTowardsEnemyParent"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collidedObject.name.Contains("StationaryEnemyParent"))
+        {
+            Destroy(gameObject);
+        }
+        if (collidedObject.name.Contains("MoveTowardEnemyChildLevel"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collidedObject.name.Contains("StationaryEnemyChildLevel"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -19,16 +19,36 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
     public GameObject RightHallwayTrigger;
 
     public float health;
+
+    public GameObject weaponSpear;
+
+    public bool enableSpear;
+
+    public float fireRate;
+
+    public float nextFire;
+
+    public GameObject Bullet;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        enableSpear = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Attack();
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            enableSpear = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            enableSpear = true;
+            weaponSpear.SetActive(true);
+        }
     }
 
     void FixedUpdate()
@@ -49,6 +69,21 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         movement *= Time.fixedDeltaTime * speed;
 
         rb.MovePosition(rb.position + movement);
+    }
+    void Attack()
+    {
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == false)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(Bullet, transform.position, transform.rotation);
+            Bullet.gameObject.SetActive(true);
+        }
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(weaponSpear, transform.position, transform.rotation);
+            Bullet.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

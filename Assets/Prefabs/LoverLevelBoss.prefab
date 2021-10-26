@@ -134,6 +134,7 @@ MonoBehaviour:
   BossBullet: {fileID: 5597847293553286475, guid: 6d0aa6c098c4c3841ae89fac033a98d7, type: 3}
   fireRate: 100
   nextFire: 0
+  loverLevelBoss: {fileID: 2385515359875707062}
   speed: 3
 --- !u!212 &2385515359875707062
 SpriteRenderer:

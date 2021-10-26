@@ -7,7 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public float speed = 5;
 
-    public GameObject scenePanel;
+    public GameObject BossPanel;
 
     public GameObject TriggerFirstRoomEnemies;
 
@@ -30,17 +30,34 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject TriggerHallwayEnemies3;
 
     public GameObject TriggerBoss;
+
+    public GameObject EnchantWeaponPanel;
+
+    public GameObject weaponSpear;
+
+    public bool enableSpear = false;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Bullet.gameObject.SetActive(true);
+        enableSpear = false;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        Shooting();
+        Attack();
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            enableSpear = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && enableSpear == true)
+        {
+            enableSpear = true;
+            weaponSpear.SetActive(true);
+        }
     }
 
     void FixedUpdate()
@@ -62,12 +79,19 @@ public class PlayerBehaviour : MonoBehaviour
         rb.MovePosition(rb.position + movement);
     }
 
-    void Shooting()
+    void Attack()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == false)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Bullet, transform.position, transform.rotation);
+            Bullet.gameObject.SetActive(true);
+        }
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true)
+        {
+                nextFire = Time.time + fireRate;
+                Instantiate(weaponSpear, transform.position, transform.rotation);
+                Bullet.SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -76,7 +100,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (collidedObject.name.Contains("Door"))
         {
-            scenePanel.gameObject.SetActive(true);
+            BossPanel.gameObject.SetActive(true);
         }
         if (collidedObject.name.Contains("Trigger First Room Enemies"))
         {
@@ -133,5 +157,14 @@ public class PlayerBehaviour : MonoBehaviour
             gc.spawnBossBehaviour();
             Destroy(TriggerBoss); ;
         }
+        if (collidedObject.name.Contains("Enchant Weapon Paper"))
+        {
+            EnchantWeaponPanel.gameObject.SetActive(true);
+        }
+    }
+    public void EnchantSpear()
+    {
+        enableSpear = true;
+        EnchantWeaponPanel.gameObject.SetActive(false);
     }
 }
