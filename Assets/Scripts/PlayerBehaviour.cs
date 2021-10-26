@@ -36,6 +36,8 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject weaponSpear;
 
     public bool enableSpear = false;
+
+    public GameObject firstDiagloguePanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +51,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         Attack();
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             enableSpear = false;
         }
@@ -89,9 +91,9 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true)
         {
-                nextFire = Time.time + fireRate;
-                Instantiate(weaponSpear, transform.position, transform.rotation);
-                Bullet.SetActive(false);
+            nextFire = Time.time + fireRate;
+            Instantiate(weaponSpear, transform.position, transform.rotation);
+            Bullet.SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -160,6 +162,10 @@ public class PlayerBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("Enchant Weapon Paper"))
         {
             EnchantWeaponPanel.gameObject.SetActive(true);
+        }
+        if (collidedObject.name.Contains("1st Open Room Dialogue"))
+        {
+            firstDiagloguePanel.gameObject.SetActive(true);
         }
     }
     public void EnchantSpear()

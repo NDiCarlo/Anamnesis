@@ -35,6 +35,7 @@ public class StationaryEnemyParentLevel : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collidedObject = collision.gameObject;
+
         if (collidedObject.name.Contains("Bullet Parent"))
         {
             health--;
