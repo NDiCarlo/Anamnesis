@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -3184869936274301400}
   - component: {fileID: 5396389480377702631}
   - component: {fileID: 6767496315462938001}
-  - component: {fileID: 2403240149311883305}
+  - component: {fileID: -2741445825570135071}
   m_Layer: 6
   m_Name: MoveTowardsEnemyParent
   m_TagString: Untagged
@@ -127,7 +127,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &2403240149311883305
+--- !u!50 &-2741445825570135071
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
