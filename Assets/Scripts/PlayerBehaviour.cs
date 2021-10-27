@@ -38,6 +38,14 @@ public class PlayerBehaviour : MonoBehaviour
     public bool enableSpear = false;
 
     public GameObject firstDiagloguePanel;
+
+    public GameObject secondDialoguePanel;
+
+    public GameObject dialoguebeforebossPanel;
+
+    public GameObject dialogueAfterbossPanel;
+
+    public GameObject dialogueAfterbossClosedPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -166,6 +174,22 @@ public class PlayerBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("1st Open Room Dialogue"))
         {
             firstDiagloguePanel.gameObject.SetActive(true);
+        }
+        if (collidedObject.name.Contains("2nd Open Room Dialogue"))
+        {
+            secondDialoguePanel.gameObject.SetActive(true);
+        }
+        if (collidedObject.name.Contains("Before Boss Dialogue"))
+        {
+            dialoguebeforebossPanel.gameObject.SetActive(true);
+        }
+        if (collidedObject.name.Contains("After Boss Open Dialogue"))
+        {
+           dialogueAfterbossPanel.gameObject.SetActive(true);
+        }
+        if (collidedObject.name.Contains("After Boss Closed Dialogue"))
+        {
+            dialogueAfterbossClosedPanel.gameObject.SetActive(true);
         }
     }
     public void EnchantSpear()

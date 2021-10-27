@@ -33,6 +33,12 @@ public class PlayerBehaviourParent : MonoBehaviour
     public GameObject thirdRoomTrigger;
 
     public GameObject fourthHallwayTrigger;
+
+    public GameObject firstroomDialogue;
+
+    public GameObject beforebossDialogue;
+
+    public GameObject afterbossDialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -162,5 +168,22 @@ public class PlayerBehaviourParent : MonoBehaviour
             gc.spawnStationaryEnemy7();
             Destroy(fourthHallwayTrigger);
         }
+        if (collidedObject.name.Contains("1st Open Room Dialogue"))
+        {
+            firstroomDialogue.gameObject.SetActive(true);
+        }
+        if (collidedObject.name.Contains("Before Boss Dialogue"))
+        {
+            beforebossDialogue.gameObject.SetActive(true);
+        }
+        if (collidedObject.name.Contains("After Boss Closed Dialogue"))
+        {
+            afterbossDialogue.gameObject.SetActive(true);
+        }
+        if (collidedObject.name.Contains("After Boss Open Dialogue"))
+        {
+            afterbossDialogue.gameObject.SetActive(true);
+        }
+
     }
 }

@@ -29,6 +29,19 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
     public float nextFire;
 
     public GameObject Bullet;
+
+    public GameObject firstroomDialogue;
+
+    public GameObject secondroomDialogue;
+
+    public GameObject thirdroomDialogue;
+
+    public GameObject beforeBossDialogue;
+
+    public GameObject afterBossDialogue;
+
+    public GameObject afterBossclosedDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -129,6 +142,30 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             gc.spawnMoveTowardsEnemy5();
             gc.spawnStationaryEnemy5();
             Destroy(RightHallwayTrigger);
+        }
+        if (collidedObject.name.Contains("1st Open Room Dialogue"))
+        {
+            firstroomDialogue.SetActive(true);
+        }
+        if (collidedObject.name.Contains("2nd Open Room Dialogue"))
+        {
+            secondroomDialogue.SetActive(true);
+        }
+        if (collidedObject.name.Contains("3rd Open Room Dialogue"))
+        {
+            thirdroomDialogue.SetActive(true);
+        }
+        if (collidedObject.name.Contains("Before Boss Dialogue"))
+        {
+            beforeBossDialogue.SetActive(true);
+        }
+        if (collidedObject.name.Contains("After Boss Open Dialogue"))
+        {
+            afterBossDialogue.SetActive(true);
+        }
+        if (collidedObject.name.Contains("After Boss Closed Dialogue"))
+        {
+            afterBossclosedDialogue.SetActive(true);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
