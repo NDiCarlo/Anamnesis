@@ -45,12 +45,8 @@ public class SationaryBulletBehaviourChildLevel : MonoBehaviour
             Destroy(gameObject);
         }
         if (collidedObject.name.Contains("Player"))
-        {
-            PlayerBehaviourChildLevel pb = GameObject.FindObjectOfType<PlayerBehaviourChildLevel>();
-
-            pb.health--;
-
-            Destroy(gameObject);
+        { 
+                Destroy(gameObject);
         }
         if (collidedObject.name.Contains("MoveTowardEnemy"))
         {

@@ -46,6 +46,8 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject dialogueAfterbossPanel;
 
     public GameObject dialogueAfterbossClosedPanel;
+
+    public GameObject deathPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -196,5 +198,38 @@ public class PlayerBehaviour : MonoBehaviour
     {
         enableSpear = true;
         EnchantWeaponPanel.gameObject.SetActive(false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedObject = collision.gameObject;
+
+        if (collidedObject.name.Contains("MoveTowardEnemy"))
+        {
+            health--;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+            }
+        }
+        if (collidedObject.name.Contains("StationaryEnemyBullet"))
+        {
+            health--;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+            }
+        }
+        if (collidedObject.name.Contains("StationaryEnemy"))
+        {
+            health--;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+            }
+        }
     }
 }

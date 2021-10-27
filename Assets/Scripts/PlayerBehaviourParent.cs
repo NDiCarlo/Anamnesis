@@ -39,6 +39,8 @@ public class PlayerBehaviourParent : MonoBehaviour
     public GameObject beforebossDialogue;
 
     public GameObject afterbossDialogue;
+
+    public GameObject deathPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -185,5 +187,37 @@ public class PlayerBehaviourParent : MonoBehaviour
             afterbossDialogue.gameObject.SetActive(true);
         }
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedObject = collision.gameObject;
+
+        if (collidedObject.name.Contains("MoveTowardsEnemyParent"))
+        {
+            health--;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+            }
+        }
+        if (collidedObject.name.Contains("StationaryEnemyParent"))
+        {
+            health--;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+            }
+        }
+        if (collidedObject.name.Contains("StationaryEnemyBulletParentLevel"))
+        {
+            health--;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+            }
+        }
     }
 }

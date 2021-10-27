@@ -44,10 +44,6 @@ public class StationaryBulletBehaviour : MonoBehaviour
         }
         if (collidedObject.name.Contains("Player"))
         {
-            PlayerBehaviour pb = GameObject.FindObjectOfType<PlayerBehaviour>();
-
-            pb.health--;
-
             Destroy(gameObject);
         }
         if (collidedObject.name.Contains("MoveTowardEnemy"))

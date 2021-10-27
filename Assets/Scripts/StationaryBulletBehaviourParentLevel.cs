@@ -44,10 +44,6 @@ public class StationaryBulletBehaviourParentLevel : MonoBehaviour
         }
         if (collidedObject.name.Contains("Player"))
         {
-            PlayerBehaviourParent pb = GameObject.FindObjectOfType<PlayerBehaviourParent>();
-
-            pb.health--;
-
             Destroy(gameObject);
         }
         if (collidedObject.name.Contains("MoveTowardsEnemyParent"))
