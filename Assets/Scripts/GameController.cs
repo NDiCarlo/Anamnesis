@@ -25,6 +25,10 @@ public class GameController : MonoBehaviour
     public int numberofEnemies = 54;
 
     public GameObject LoverLevelBoss;
+
+    public GameObject mainMenu;
+    public GameObject restart;
+    public GameObject resume;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +50,13 @@ public class GameController : MonoBehaviour
         if (numberofEnemies == 9)
         {
             Destroy(ThirdRoomBarricade);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 0;
+            mainMenu.SetActive(true);
+            restart.SetActive(true);
+            resume.SetActive(true);
         }
     }
 

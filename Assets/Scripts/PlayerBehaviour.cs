@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class PlayerBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -48,6 +49,8 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject dialogueAfterbossClosedPanel;
 
     public GameObject deathPanel;
+
+    public Text livesNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +73,8 @@ public class PlayerBehaviour : MonoBehaviour
             enableSpear = true;
             weaponSpear.SetActive(true);
         }
+
+        livesNumber.text = health.ToString();
     }
 
     void FixedUpdate()

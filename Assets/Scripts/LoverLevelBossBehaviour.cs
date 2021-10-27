@@ -67,15 +67,15 @@ public class LoverLevelBossBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        loverLevelBoss.color = Color.white;
-
-        yield return new WaitForSeconds(.10f);
-
         loverLevelBoss.color = Color.red;
 
         yield return new WaitForSeconds(.10f);
 
         loverLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.10f);
+
+        loverLevelBoss.color = Color.red;
 
         yield return new WaitForSeconds(.5f);
 
@@ -87,7 +87,7 @@ public class LoverLevelBossBehaviour : MonoBehaviour
 
         attack();
 
-        loverLevelBoss.color = Color.red;
+        loverLevelBoss.color = Color.white;
 
         yield return new WaitForSeconds(.2f);
 
