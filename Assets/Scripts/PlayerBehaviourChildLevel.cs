@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBehaviourChildLevel : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public GameObject deathPanel;
 
+    public Text livesNumber;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +67,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             enableSpear = true;
             weaponSpear.SetActive(true);
         }
+
+        livesNumber.text = health.ToString();
     }
 
     void FixedUpdate()

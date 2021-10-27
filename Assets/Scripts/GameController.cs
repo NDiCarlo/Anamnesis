@@ -507,20 +507,6 @@ public class GameController : MonoBehaviour
 
             se.health = 1;
         }
-
-        for (int i = 0; i < enemiesPerWave4; ++i)
-        {
-            GameObject newEnemy = Instantiate(stationaryEnemy);
-
-            newEnemy.transform.rotation = transform.rotation;
-
-            newEnemy.transform.position = new Vector2(63.5f, -13.4f);
-
-            StationaryEnemyBehaviour se = GameObject.FindObjectOfType<StationaryEnemyBehaviour>
-                ();
-
-            se.health = 1;
-        }
     }
 
     public void spawnBossBehaviour()
