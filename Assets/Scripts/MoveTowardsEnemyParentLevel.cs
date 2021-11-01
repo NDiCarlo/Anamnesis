@@ -53,6 +53,59 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
                ();
                 gc.numberofEnemies--;
             }
+            if (health == 5)
+            {
+                MoveTowards.transform.localScale = new Vector2(1.3f, 1.3f);
+            }
+            if (health == 4)
+            {
+                MoveTowards.transform.localScale = new Vector2(1.1f, 1.1f);
+            }
+            if (health == 3)
+            {
+                MoveTowards.transform.localScale = new Vector2(1f, 1f);
+            }
+            if (health == 2)
+            {
+                MoveTowards.transform.localScale = new Vector2(.9f, .9f);
+            }
+            if (health == 1)
+            {
+                MoveTowards.transform.localScale = new Vector2(.8f, .8f);
+            }
+        }
+            if (collidedObject.name.Contains("Weapon Spear"))
+            {
+                health--;
+
+                if (health == 0)
+                {
+                    Destroy(gameObject);
+                    GameControllerChildLevel gc = GameObject.FindObjectOfType<GameControllerChildLevel>
+                    ();
+
+                    gc.numberofEnemies--;
+                }
+                if (health == 5)
+                {
+                    MoveTowards.transform.localScale = new Vector2(.9f, .9f);
+                }
+                if (health == 4)
+                {
+                    MoveTowards.transform.localScale = new Vector2(.8f, .8f);
+                }
+                if (health == 3)
+                {
+                    MoveTowards.transform.localScale = new Vector2(.7f, .7f);
+                }
+                if (health == 2)
+                {
+                    MoveTowards.transform.localScale = new Vector2(.6f, .6f);
+                }
+                if (health == 1)
+                {
+                    MoveTowards.transform.localScale = new Vector2(.5f, .5f);
+                }
+            }
         }
     }
-}

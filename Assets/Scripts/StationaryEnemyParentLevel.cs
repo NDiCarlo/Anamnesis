@@ -12,6 +12,8 @@ public class StationaryEnemyParentLevel : MonoBehaviour
     public Transform player;
 
     public int health;
+
+    public float range;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class StationaryEnemyParentLevel : MonoBehaviour
     }
     void checktimetoFire()
     {
-        if (Time.time > nextFire)
+        if (Time.time > nextFire && range < 10f)
         {
             Instantiate(bullet, transform.position, transform.rotation);
             nextFire = Time.time + fireRate;
@@ -47,6 +49,59 @@ public class StationaryEnemyParentLevel : MonoBehaviour
                ();
                 gc.numberofEnemies--;
             }
+            if (health == 5)
+            {
+                transform.localScale = new Vector2(1.3f, 1.3f);
+            }
+            if (health == 4)
+            {
+                transform.localScale = new Vector2(1.1f, 1.1f);
+            }
+            if (health == 3)
+            {
+                transform.localScale = new Vector2(1f, 1f);
+            }
+            if (health == 2)
+            {
+                transform.localScale = new Vector2(.9f, .9f);
+            }
+            if (health == 1)
+            {
+                transform.localScale = new Vector2(.8f, .8f);
+            }
+        }
+            if (collidedObject.name.Contains("Weapon Spear"))
+            {
+                health--;
+
+                if (health == 0)
+                {
+                    Destroy(gameObject);
+                    GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
+                    ();
+
+                    gc.numberofEnemies--;
+                }
+                if (health == 5)
+                {
+                    transform.localScale = new Vector2(.9f, .9f);
+                }
+                if (health == 4)
+                {
+                    transform.localScale = new Vector2(.8f, .8f);
+                }
+                if (health == 3)
+                {
+                    transform.localScale = new Vector2(.7f, .7f);
+                }
+                if (health == 2)
+                {
+                    transform.localScale = new Vector2(.6f, .6f);
+                }
+                if (health == 1)
+                {
+                    transform.localScale = new Vector2(.5f, .5f);
+                }
+            }
         }
     }
-}

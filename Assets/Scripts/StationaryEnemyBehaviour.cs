@@ -12,6 +12,8 @@ public class StationaryEnemyBehaviour : MonoBehaviour
     public Transform player;
 
     public int health;
+
+    public float range;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class StationaryEnemyBehaviour : MonoBehaviour
     }
     void checktimetoFire()
     {
-        if (Time.time > nextFire)
+        if (Time.time > nextFire && range < 10f)
         {
             Instantiate(bullet, transform.position, transform.rotation);
             nextFire = Time.time + fireRate;
@@ -48,6 +50,26 @@ public class StationaryEnemyBehaviour : MonoBehaviour
                 gc.numberofEnemies--;
 
                 Destroy(gameObject);
+            }
+            if (health == 5)
+            {
+                transform.localScale = new Vector2(.9f, .9f);
+            }
+            if (health == 4)
+            {
+                transform.localScale = new Vector2(.8f, .8f);
+            }
+            if (health == 3)
+            {
+                transform.localScale = new Vector2(.7f, .7f);
+            }
+            if (health == 2)
+            {
+                transform.localScale = new Vector2(.6f, .6f);
+            }
+            if (health == 1)
+            {
+                transform.localScale = new Vector2(.5f, .5f);
             }
         }
     }

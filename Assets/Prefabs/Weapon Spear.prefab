@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4038108291699548052}
   - component: {fileID: 2104479224202984401}
   - component: {fileID: -6344644058956499298}
-  m_Layer: 0
+  - component: {fileID: 3587563507121664517}
+  m_Layer: 13
   m_Name: Weapon Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 438265374777038979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2302, y: -1.421, z: 0}
-  m_LocalScale: {x: 2.4052355, y: 2.1308122, z: 0}
+  m_LocalScale: {x: 2.4052355, y: 2.9, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,3 +97,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifetime: 0.1
+--- !u!60 &3587563507121664517
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438265374777038979}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.33333334, y: 1.1875}
+    newSize: {x: 0.33333334, y: 1.1875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.125, y: 1.1875}
+      - {x: -0.16666667, y: 1.125}
+      - {x: -0.16666667, y: 0.22916667}
+      - {x: -0.083333336, y: 0}
+      - {x: 0.10416667, y: 0}
+      - {x: 0.16666667, y: 0.14583334}
+      - {x: 0.16666667, y: 1.0208334}
+      - {x: 0.125, y: 1.1875}

@@ -54,5 +54,9 @@ public class StationaryBulletBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collidedObject.name.Contains("Secret Door"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -52,6 +52,18 @@ public class SationaryBulletBehaviourChildLevel : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collidedObject.name.Contains("Weapon Spear"))
+        {
+            Destroy(gameObject);
+        }
+        if (collidedObject.name.Contains("Bullet"))
+        {
+            Destroy(gameObject);
+        }
+        if (collidedObject.name.Contains("Secret Door"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

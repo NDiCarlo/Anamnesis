@@ -32,7 +32,8 @@ public class GameControllerParent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Invoke("spawnMoveTowardsEnemy8", 6f);
+        Invoke("spawnStationaryEnemy8", 6f);
     }
 
     // Update is called once per frame
