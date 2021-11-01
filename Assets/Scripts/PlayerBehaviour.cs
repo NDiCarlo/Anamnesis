@@ -51,6 +51,12 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject deathPanel;
 
     public Text livesNumber;
+
+    public Text livesLeft;
+
+    public int maxHealth;
+
+    public float timestamp = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -192,7 +198,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
-           dialogueAfterbossPanel.gameObject.SetActive(true);
+            dialogueAfterbossPanel.gameObject.SetActive(true);
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
@@ -213,6 +219,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             health--;
 
+            timestamp = Time.time;
+
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
@@ -222,18 +230,25 @@ public class PlayerBehaviour : MonoBehaviour
         {
             health--;
 
+            timestamp = Time.time;
+
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
         if (collidedObject.name.Contains("StationaryEnemy"))
         {
             health--;
 
+            timestamp = Time.time;
+
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
             }
         }
     }

@@ -25,7 +25,7 @@ public class PlayerBehaviourParent : MonoBehaviour
 
     public bool enableSpear;
 
-    public float health;
+    public int health;
 
     public GameObject secondRoomTrigger;
 
@@ -44,16 +44,17 @@ public class PlayerBehaviourParent : MonoBehaviour
     public GameObject deathPanel;
 
     public Text livesNumber;
+
+    public Text livesLeft;
+
+    public int maxHealth;
+
+    public float timestamp = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         enableSpear = false;
-        GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
-                ();
-
-        gc.spawnMoveTowardsEnemy8();
-        gc.spawnStationaryEnemy8();
     }
 
     // Update is called once per frame
@@ -201,6 +202,8 @@ public class PlayerBehaviourParent : MonoBehaviour
         {
             health--;
 
+            timestamp = Time.time;
+
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
@@ -210,18 +213,26 @@ public class PlayerBehaviourParent : MonoBehaviour
         {
             health--;
 
+            timestamp = Time.time;
+
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
         if (collidedObject.name.Contains("StationaryEnemyBulletParentLevel"))
         {
             health--;
 
+            timestamp = Time.time;
+
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
     }

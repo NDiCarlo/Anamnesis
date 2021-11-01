@@ -54,5 +54,13 @@ public class StationaryBulletBehaviourParentLevel : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collidedObject.name.Contains("Weapon Spear"))
+        {
+            Destroy(gameObject);
+        }
+        if (collidedObject.name.Contains("Secret Door"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

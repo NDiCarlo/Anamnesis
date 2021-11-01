@@ -19,7 +19,7 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public GameObject RightHallwayTrigger;
 
-    public float health;
+    public int health;
 
     public GameObject weaponSpear;
 
@@ -46,6 +46,12 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
     public GameObject deathPanel;
 
     public Text livesNumber;
+
+    public Text livesLeft;
+
+    public int maxHealth;
+
+    public float timestamp = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -183,7 +189,9 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             health--;
 
-            if(health <= 0)
+            timestamp = Time.time;
+
+            if (health <= 0)
             {
                 deathPanel.SetActive(true);
             }
@@ -192,18 +200,26 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             health--;
 
+            timestamp = Time.time;
+
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
         if (collidedObject.name.Contains("StationaryEnemyChildLevel"))
         {
             health--;
 
+            timestamp = Time.time;
+
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
     }
