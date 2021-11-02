@@ -26,4 +26,13 @@ public class UIButtonBehahviour : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenuScene");
     }
+
+    public void gotoLoverClosed()
+    {
+        SceneManager.LoadScene("LoverScene");
+    }
+    public void gotoLoverOpen()
+    {
+        SceneManager.LoadScene("LoverLevelOpenScene");
+    }
 }

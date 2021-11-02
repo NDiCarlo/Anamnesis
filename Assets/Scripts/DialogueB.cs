@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueB : MonoBehaviour
 {
-    public float waitTime = .07f;
+    private float waitTime = .05f;
     private Text showText;
     public string input;
     private void Awake()
