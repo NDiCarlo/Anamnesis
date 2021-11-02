@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuBehaviour : MonoBehaviour
 {
+
+    public GameObject ControlsImage;
+
+    public GameObject MainMenuImage;
     public void ExitButton()
     {
         Application.Quit();
@@ -17,11 +22,13 @@ public class MainMenuBehaviour : MonoBehaviour
 
     public void GoToControls()
     {
-        SceneManager.LoadScene("ControlsScene");
+       ControlsImage.gameObject.SetActive(true);
+       MainMenuImage.gameObject.SetActive(false);
     }
 
     public void GoBack()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        ControlsImage.gameObject.SetActive(false);
+        MainMenuImage.gameObject.SetActive(true);
     }
 }
