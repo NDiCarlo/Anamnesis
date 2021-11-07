@@ -128,7 +128,7 @@ MonoBehaviour:
   bullet: {fileID: 4513650390130432841, guid: 63930dc927ed6a84aacaaadaf1639914, type: 3}
   player: {fileID: 7513356442401315168, guid: bcf566ecad9f23940ac813884d3ab9e9, type: 3}
   health: 0
-  range: 0
+  range: 13
 --- !u!50 &8806333858710070645
 Rigidbody2D:
   serializedVersion: 4

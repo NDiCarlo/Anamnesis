@@ -21,9 +21,9 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public int health;
 
-    public GameObject weaponSpear;
+    public GameObject Arrow;
 
-    public bool enableSpear;
+    public bool enableBow;
 
     public float fireRate;
 
@@ -53,11 +53,21 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public float timestamp = 0.0f;
 
+    public GameObject Bow;
+
+    public GameObject Spear;
+
+    public bool enableSpear = false;
+
+    private bool isRead = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        enableSpear = false;
+        Bow.SetActive(true);
+        Spear.SetActive(false);
+        Bullet.SetActive(true);
     }
 
     // Update is called once per frame
@@ -66,12 +76,18 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         Attack();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            enableBow = false;
             enableSpear = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            enableBow = true;
+            enableSpear = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isRead == true)
+        {
+            enableBow = false;
             enableSpear = true;
-            weaponSpear.SetActive(true);
         }
 
         livesNumber.text = health.ToString();
@@ -98,17 +114,30 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == false)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == false && enableSpear == false)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Bullet, transform.position, transform.rotation);
             Bullet.gameObject.SetActive(true);
         }
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(Arrow, transform.position, transform.rotation);
+            Instantiate(Bow, transform.position, transform.rotation);
+            Bullet.SetActive(false);
+            Spear.SetActive(false);
+            Bow.SetActive(true);
+            Arrow.SetActive(true);
+        }
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true)
         {
             nextFire = Time.time + fireRate;
-            Instantiate(weaponSpear, transform.position, transform.rotation);
+            Instantiate(Spear, transform.position, transform.rotation);
             Bullet.SetActive(false);
+            Arrow.SetActive(false);
+            Bow.SetActive(false);
+            Spear.SetActive(true);
         }
     }
 
@@ -181,6 +210,13 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             afterBossclosedDialogue.SetActive(true);
         }
     }
+
+    public void EnchantSpear()
+    {
+        Spear.SetActive(true);
+        isRead = true;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collidedObject = collision.gameObject;

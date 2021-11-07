@@ -6,10 +6,6 @@ public class BulletBehaviour : MonoBehaviour
 {
     public float Lifetime;
 
-    private Vector3 target;
-
-    private float Angle;
-
     public float speed;
 
     Vector3 mousePosition;

@@ -51,6 +51,7 @@ MonoBehaviour:
   bullet: {fileID: 2007541236115804307, guid: 4cf3564ae0c9cd34d86de2075d20d556, type: 3}
   player: {fileID: 7838813858540307362, guid: a703b099ac120dd4da4f6b2471b9720d, type: 3}
   health: 0
+  range: 25
 --- !u!212 &1004668836934853769
 SpriteRenderer:
   m_ObjectHideFlags: 0

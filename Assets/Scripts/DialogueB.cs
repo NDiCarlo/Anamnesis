@@ -23,7 +23,10 @@ public class DialogueB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            waitTime = 0.00f;
+        }
     }
     protected IEnumerator WriteText(string input, Text showText)
     {

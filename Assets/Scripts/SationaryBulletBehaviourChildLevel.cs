@@ -21,7 +21,7 @@ public class SationaryBulletBehaviourChildLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
     public PlayerBehaviourChildLevel target;

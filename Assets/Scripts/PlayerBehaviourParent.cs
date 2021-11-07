@@ -50,6 +50,14 @@ public class PlayerBehaviourParent : MonoBehaviour
     public int maxHealth;
 
     public float timestamp = 0.0f;
+
+    public GameObject Spear;
+
+    public GameObject Bow;
+
+    public GameObject Arrow;
+
+    public bool enableBow;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,14 +69,21 @@ public class PlayerBehaviourParent : MonoBehaviour
     void Update()
     {
         Attack();
+        Attack();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            enableBow = false;
             enableSpear = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            enableBow = true;
+            enableSpear = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            enableBow = false;
             enableSpear = true;
-            weaponSpear.SetActive(true);
         }
 
         livesNumber.text = health.ToString();
@@ -79,17 +94,30 @@ public class PlayerBehaviourParent : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == false)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == false && enableSpear == false)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Bullet, transform.position, transform.rotation);
             Bullet.gameObject.SetActive(true);
         }
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(Arrow, transform.position, transform.rotation);
+            Instantiate(Bow, transform.position, transform.rotation);
+            Bullet.SetActive(false);
+            Spear.SetActive(false);
+            Bow.SetActive(true);
+            Arrow.SetActive(true);
+        }
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true)
         {
             nextFire = Time.time + fireRate;
-            Instantiate(weaponSpear, transform.position, transform.rotation);
+            Instantiate(Spear, transform.position, transform.rotation);
             Bullet.SetActive(false);
+            Arrow.SetActive(false);
+            Bow.SetActive(false);
+            Spear.SetActive(true);
         }
     }
     void Movement()

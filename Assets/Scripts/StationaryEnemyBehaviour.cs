@@ -28,7 +28,7 @@ public class StationaryEnemyBehaviour : MonoBehaviour
     }
     void checktimetoFire()
     {
-        if (Time.time > nextFire && range < 10f)
+        if (Time.time > nextFire && (Vector2.Distance(transform.position, player.position) >= range))
         {
             Instantiate(bullet, transform.position, transform.rotation);
             nextFire = Time.time + fireRate;
