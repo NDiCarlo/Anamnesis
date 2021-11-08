@@ -9,12 +9,16 @@ public class PauseBehaviour : MonoBehaviour
     public GameObject restart;
     public GameObject resume;
 
+    public GameObject player;
+
     public void Resume()
     {
         Time.timeScale = 1;
         mainMenu.SetActive(false);
         restart.SetActive(false);
         resume.SetActive(false);
+
+        player.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public void MainMenu()
@@ -24,6 +28,9 @@ public class PauseBehaviour : MonoBehaviour
 
     public void ResetButton()
     {
+        player.GetComponent<SpriteRenderer>().enabled = true;
+        Time.timeScale = 1;
+
         int scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene);
     }

@@ -29,6 +29,12 @@ public class GameControllerParent : MonoBehaviour
     public GameObject secondRoomBarricade;
 
     public GameObject fourthHallwayBarricade;
+
+    public GameObject player;
+
+    public GameObject mainMenu;
+    public GameObject restart;
+    public GameObject resume;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +61,15 @@ public class GameControllerParent : MonoBehaviour
         {
             Destroy(fourthHallwayBarricade);
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 0;
+            mainMenu.SetActive(true);
+            restart.SetActive(true);
+            resume.SetActive(true);
 
-
+            player.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
     public void spawnMoveTowardsEnemy()
     {

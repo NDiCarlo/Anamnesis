@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
 
     public GameObject LoverLevelBoss;
 
+    public GameObject player;
+
     public GameObject mainMenu;
     public GameObject restart;
     public GameObject resume;
@@ -57,6 +59,8 @@ public class GameController : MonoBehaviour
             mainMenu.SetActive(true);
             restart.SetActive(true);
             resume.SetActive(true);
+
+            player.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
