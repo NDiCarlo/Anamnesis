@@ -29,6 +29,12 @@ public class GameControllerChildLevel : MonoBehaviour
     public GameObject firstbossbarricadeLeft;
 
     public float numberofEnemies = 45;
+
+    public GameObject player;
+
+    public GameObject mainMenu;
+    public GameObject restart;
+    public GameObject resume;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +58,15 @@ public class GameControllerChildLevel : MonoBehaviour
         {
             Destroy(firstbossbarricadeLeft);
             Destroy(firstbossbarricadeRight);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 0;
+            mainMenu.SetActive(true);
+            restart.SetActive(true);
+            resume.SetActive(true);
+
+            player.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
     public void spawnMoveTowardsEnemy()
