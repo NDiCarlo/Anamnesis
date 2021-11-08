@@ -45,11 +45,7 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
 
         if (collidedObject.name.Contains("Player"))
         {
-            PlayerBehaviour pb = GameObject.FindObjectOfType<PlayerBehaviour>
-                ();
-
-            pb.health--;
-
+            Destroy(gameObject);
         }
 
         if (collidedObject.name.Contains("Bullet"))

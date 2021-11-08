@@ -16,7 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public GameObject TriggerThirdRoomEnemies;
 
-    public int health = 999;
+    public int health;
 
     public GameObject Bullet;
 

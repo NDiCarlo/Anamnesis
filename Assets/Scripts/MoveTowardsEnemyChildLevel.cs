@@ -45,11 +45,7 @@ public class MoveTowardsEnemyChildLevel : MonoBehaviour
 
         if (collidedObject.name.Contains("Player"))
         {
-            PlayerBehaviourChildLevel pb = GameObject.FindObjectOfType<PlayerBehaviourChildLevel>
-                ();
-
-            pb.health--;
-
+            Destroy(gameObject);
         }
 
         if (collidedObject.name.Contains("Bullet"))

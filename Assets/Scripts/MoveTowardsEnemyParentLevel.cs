@@ -74,18 +74,18 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
                 MoveTowards.transform.localScale = new Vector2(.8f, .8f);
             }
         }
-            if (collidedObject.name.Contains("Weapon Spear"))
+        if (collidedObject.name.Contains("Weapon Spear"))
+        {
+            health--;
+
+            if (health == 0)
             {
-                health--;
+                Destroy(gameObject);
+                GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
+                ();
 
-                if (health == 0)
-                {
-                    Destroy(gameObject);
-                    GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
-                    ();
-
-                    gc.numberofEnemies--;
-                }
+                gc.numberofEnemies--;
+            }
             if (health == 5)
             {
                 MoveTowards.transform.localScale = new Vector2(1.3f, 1.3f);
@@ -107,5 +107,9 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
                 MoveTowards.transform.localScale = new Vector2(.8f, .8f);
             }
         }
+            if (collidedObject.name.Contains("Player"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
