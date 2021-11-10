@@ -279,6 +279,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  FirstRoomTrigger: {fileID: 0}
+  RoomTriggerLeft: {fileID: 0}
+  RoomTriggerRight: {fileID: 0}
+  LeftHallwayTrigger: {fileID: 0}
+  RightHallwayTrigger: {fileID: 0}
+  health: 0
+  Arrow: {fileID: 0}
+  enableBow: 0
+  fireRate: 0
+  nextFire: 0
+  Bullet: {fileID: 0}
+  firstroomDialogue: {fileID: 0}
+  secondroomDialogue: {fileID: 0}
+  thirdroomDialogue: {fileID: 0}
+  beforeBossDialogue: {fileID: 0}
+  afterBossDialogue: {fileID: 0}
+  afterBossclosedDialogue: {fileID: 0}
+  deathPanel: {fileID: 0}
+  livesNumber: {fileID: 0}
+  livesLeft: {fileID: 0}
+  maxHealth: 0
+  timestamp: 0
+  Bow: {fileID: 0}
+  Spear: {fileID: 0}
+  enableSpear: 0
 --- !u!50 &7513356442401315171
 Rigidbody2D:
   serializedVersion: 4

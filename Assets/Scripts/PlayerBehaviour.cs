@@ -248,7 +248,7 @@ public class PlayerBehaviour : MonoBehaviour
                 livesLeft.enabled = false;
             }
         }
-        if (collidedObject.name.Contains("StationaryEnemy"))
+        else if (collidedObject.name.Contains("StationaryEnemy"))
         {
             health--;
 

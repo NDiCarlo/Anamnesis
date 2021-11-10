@@ -292,8 +292,19 @@ MonoBehaviour:
   TriggerHallwayEnemies3: {fileID: 0}
   TriggerBoss: {fileID: 0}
   EnchantWeaponPanel: {fileID: 0}
-  weaponSpear: {fileID: 0}
-  enableSpear: 0
+  Arrow: {fileID: 0}
+  enableBow: 0
+  firstDiagloguePanel: {fileID: 0}
+  secondDialoguePanel: {fileID: 0}
+  dialoguebeforebossPanel: {fileID: 0}
+  dialogueAfterbossPanel: {fileID: 0}
+  dialogueAfterbossClosedPanel: {fileID: 0}
+  deathPanel: {fileID: 0}
+  livesNumber: {fileID: 0}
+  livesLeft: {fileID: 0}
+  maxHealth: 0
+  timestamp: 0
+  Bow: {fileID: 0}
 --- !u!50 &7838813858540307361
 Rigidbody2D:
   serializedVersion: 4
