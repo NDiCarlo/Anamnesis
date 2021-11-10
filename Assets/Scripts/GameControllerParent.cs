@@ -199,7 +199,7 @@ public class GameControllerParent : MonoBehaviour
 
             newEnemy.transform.rotation = transform.rotation;
 
-            newEnemy.transform.position = new Vector2(-79.7f, 26.4f);
+            newEnemy.transform.position = new Vector2(-78.7f, 26.4f);
 
             StationaryEnemyParentLevel se = GameObject.FindObjectOfType<StationaryEnemyParentLevel>
                 ();
