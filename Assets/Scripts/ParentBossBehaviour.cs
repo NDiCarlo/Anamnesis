@@ -22,6 +22,19 @@ public class ParentBossBehaviour : MonoBehaviour
     void Update()
     {
         player = GameObject.Find("Player").GetComponent<Transform>();
+        if(health <= 0)
+        {
+            PlayerBehaviourParent pb = GameObject.FindObjectOfType<PlayerBehaviourParent>
+                ();
+
+            pb.health = 50;
+
+            pb.door.SetActive(true);
+
+            pb.afterBossDialogue.SetActive(true);
+
+            Destroy(gameObject);
+        }
     }
 
     public IEnumerator BossBehaviour()

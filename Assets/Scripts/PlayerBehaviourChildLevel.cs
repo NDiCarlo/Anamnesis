@@ -63,6 +63,10 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public GameObject Panel;
 
+    public GameObject door;
+
+    public GameObject afterbossdialogue;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -64,6 +64,10 @@ public class PlayerBehaviourParent : MonoBehaviour
     public GameObject firstOpenRedBox;
 
     public GameObject beforeBossRedBox;
+
+    public GameObject door;
+
+    public GameObject afterBossDialogue;
     // Start is called before the first frame update
     void Start()
     {

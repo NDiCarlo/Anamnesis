@@ -27,6 +27,20 @@ public class ChildBehaviour : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+
+            if (health <= 0)
+            {
+                PlayerBehaviourChildLevel pb = GameObject.FindObjectOfType<PlayerBehaviourChildLevel>
+                    ();
+
+                pb.health = 50;
+
+                pb.door.SetActive(true);
+
+                pb.afterBossDialogue.SetActive(true);
+
+                Destroy(gameObject);
+            }
         }
     }
 

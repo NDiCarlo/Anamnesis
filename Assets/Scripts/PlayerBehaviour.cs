@@ -61,6 +61,10 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject Bow;
 
     private bool isRead = false;
+
+    public GameObject door;
+
+    public GameObject afterBossDialogue;
     // Start is called before the first frame update
     void Start()
     {

@@ -6,7 +6,7 @@ public class LoverLevelBossBehaviour : MonoBehaviour
 {
     private Transform player;
 
-    public int health;
+    public int health = 50;
 
     private Rigidbody2D rb;
 
@@ -36,6 +36,19 @@ public class LoverLevelBossBehaviour : MonoBehaviour
     void Update()
     {
         BossMovement();
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+
+            PlayerBehaviour pb = GameObject.FindObjectOfType<PlayerBehaviour>
+                    ();
+
+            pb.health = 50;
+
+            pb.door.SetActive(true);
+
+            pb.afterBossDialogue.SetActive(true);
+        }
     }
     public void attack()
     {

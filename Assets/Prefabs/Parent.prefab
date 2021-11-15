@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12de2c53fd4935e42ad0e4d234d187df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   parentLevelBoss: {fileID: 3096362030655807840}
   range: 10
   telegraph: {fileID: 7400020450346153411, guid: bbf48315242247a419f374e1bf6bdfd5, type: 3}
