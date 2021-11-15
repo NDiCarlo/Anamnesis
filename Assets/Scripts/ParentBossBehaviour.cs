@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class ParentBossBehaviour : MonoBehaviour
 {
-    private Transform player = GameObject.Find("Player").GetComponent<Transform>();
+    private Transform player;
     public float speed;
     public SpriteRenderer parentLevelBoss;
     public float range = 10f;
-    public GameObject damageAOE;
-    public GameObject projectile;
+    public GameObject telegraph;
+    public GameObject attack;
+    public float health = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class ParentBossBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        player = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     public IEnumerator BossBehaviour()
@@ -43,16 +44,14 @@ public class ParentBossBehaviour : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
-        attack();
+        Vector3 memorizePos = player.position;
+
+        Instantiate(telegraph, memorizePos, transform.rotation);
+
+        yield return new WaitForSeconds(.2f);
+
+        Instantiate(attack, memorizePos, transform.rotation);
 
         StartCoroutine(BossBehaviour());
-    }
-
-    public void attack()
-    {
-        if (Vector2.Distance(player.position, transform.position) >= range)
-        {
-            
-        }
     }
 }
