@@ -68,6 +68,8 @@ public class PlayerBehaviourParent : MonoBehaviour
     public GameObject door;
 
     public GameObject afterBossDialogue;
+
+    public GameObject TriggerBoss;
     // Start is called before the first frame update
     void Start()
     {
@@ -236,6 +238,14 @@ public class PlayerBehaviourParent : MonoBehaviour
         {
             afterbossDialogue.gameObject.SetActive(true);
         }
+        if (collidedObject.name.Contains("InstantiateBossTrigger"))
+        {
+            GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
+                ();
+            gc.spawnBossBehaviour();
+            Destroy(TriggerBoss); ;
+        }
+
 
     }
     private void OnCollisionEnter2D(Collision2D collision)

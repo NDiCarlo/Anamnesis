@@ -35,6 +35,8 @@ public class GameControllerParent : MonoBehaviour
     public GameObject mainMenu;
     public GameObject restart;
     public GameObject resume;
+
+    public GameObject ParentBoss;
     // Start is called before the first frame update
     void Start()
     {
@@ -626,4 +628,13 @@ public class GameControllerParent : MonoBehaviour
             se.health = 1;
         }
     }
-}
+        public void spawnBossBehaviour()
+        {
+            GameObject newBoss = Instantiate(ParentBoss);
+
+            newBoss.transform.rotation = transform.rotation;
+
+            newBoss.transform.position = new Vector2(119.9f, -9.3f);
+
+        }
+    }
