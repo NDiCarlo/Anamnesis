@@ -24,7 +24,7 @@ public class RegenerateHealthBehaviour : MonoBehaviour
             PlayerBehaviour pb = GameObject.FindObjectOfType<PlayerBehaviour>
                 ();
 
-            if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 10f))
+            if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 5f))
             {
                 pb.health++;
             }
@@ -34,7 +34,7 @@ public class RegenerateHealthBehaviour : MonoBehaviour
             PlayerBehaviourParent pb = GameObject.FindObjectOfType<PlayerBehaviourParent>
                 ();
 
-            if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 10f))
+            if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 5f))
             {
                 pb.health++;
             }
@@ -44,7 +44,7 @@ public class RegenerateHealthBehaviour : MonoBehaviour
             PlayerBehaviourChildLevel pb = GameObject.FindObjectOfType<PlayerBehaviourChildLevel>
                 ();
 
-            if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 10f))
+            if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 5f))
             {
                 pb.health++;
             }

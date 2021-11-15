@@ -8,7 +8,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public float speed = 5;
 
-    public GameObject BossPanel;
+    public GameObject Panel;
 
     public GameObject TriggerFirstRoomEnemies;
 
@@ -132,7 +132,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (collidedObject.name.Contains("Door"))
         {
-            BossPanel.gameObject.SetActive(true);
+            Panel.gameObject.SetActive(true);
         }
         if (collidedObject.name.Contains("Trigger First Room Enemies"))
         {

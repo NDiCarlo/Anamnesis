@@ -107,9 +107,45 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
                 MoveTowards.transform.localScale = new Vector2(.8f, .8f);
             }
         }
-            if (collidedObject.name.Contains("Player"))
+        if (collidedObject.name.Contains("Player"))
+        {
+            Destroy(gameObject);
+            GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
+           ();
+            gc.numberofEnemies--;
+        }
+        if (collidedObject.name.Contains("Arrow"))
+        {
+            health--;
+
+            if (health == 0)
             {
                 Destroy(gameObject);
+                GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
+                ();
+
+                gc.numberofEnemies--;
+            }
+            if (health == 5)
+            {
+                MoveTowards.transform.localScale = new Vector2(.9f, .9f);
+            }
+            if (health == 4)
+            {
+                MoveTowards.transform.localScale = new Vector2(.8f, .8f);
+            }
+            if (health == 3)
+            {
+                MoveTowards.transform.localScale = new Vector2(.7f, .7f);
+            }
+            if (health == 2)
+            {
+                MoveTowards.transform.localScale = new Vector2(.6f, .6f);
+            }
+            if (health == 1)
+            {
+                MoveTowards.transform.localScale = new Vector2(.5f, .5f);
             }
         }
     }
+}

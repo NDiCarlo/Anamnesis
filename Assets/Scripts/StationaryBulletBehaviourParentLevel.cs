@@ -62,5 +62,9 @@ public class StationaryBulletBehaviourParentLevel : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collidedObject.name.Contains("Arrow"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

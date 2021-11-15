@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -61,6 +62,11 @@ public class GameController : MonoBehaviour
             resume.SetActive(true);
 
             player.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene("ParentLevelOpen");
         }
     }
 

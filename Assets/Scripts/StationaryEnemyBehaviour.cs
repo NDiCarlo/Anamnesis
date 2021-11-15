@@ -72,5 +72,39 @@ public class StationaryEnemyBehaviour : MonoBehaviour
                 transform.localScale = new Vector2(.5f, .5f);
             }
         }
+        if (collidedObject.name.Contains("Arrow"))
+        {
+            health--;
+
+            if (health == 0)
+            {
+                GameController gc = GameObject.FindObjectOfType<GameController>
+                ();
+
+                gc.numberofEnemies--;
+
+                Destroy(gameObject);
+            }
+            if (health == 5)
+            {
+                transform.localScale = new Vector2(.9f, .9f);
+            }
+            if (health == 4)
+            {
+                transform.localScale = new Vector2(.8f, .8f);
+            }
+            if (health == 3)
+            {
+                transform.localScale = new Vector2(.7f, .7f);
+            }
+            if (health == 2)
+            {
+                transform.localScale = new Vector2(.6f, .6f);
+            }
+            if (health == 1)
+            {
+                transform.localScale = new Vector2(.5f, .5f);
+            }
+        }
     }
 }
