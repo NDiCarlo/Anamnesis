@@ -58,6 +58,12 @@ public class PlayerBehaviourParent : MonoBehaviour
     public GameObject Arrow;
 
     public bool enableBow;
+
+    public GameObject Panel;
+
+    public GameObject firstOpenRedBox;
+
+    public GameObject beforeBossRedBox;
     // Start is called before the first frame update
     void Start()
     {
@@ -138,6 +144,10 @@ public class PlayerBehaviourParent : MonoBehaviour
     {
         GameObject collidedObject = collision.gameObject;
 
+        if (collidedObject.name.Contains("Door"))
+        {
+            Panel.gameObject.SetActive(true);
+        }
         if (collidedObject.name.Contains("First Hallway Trigger"))
         {
             GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
@@ -207,10 +217,12 @@ public class PlayerBehaviourParent : MonoBehaviour
         if (collidedObject.name.Contains("1st Open Room Dialogue"))
         {
             firstroomDialogue.gameObject.SetActive(true);
+            Destroy(firstOpenRedBox);
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
             beforebossDialogue.gameObject.SetActive(true);
+            Destroy(beforeBossRedBox);
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {

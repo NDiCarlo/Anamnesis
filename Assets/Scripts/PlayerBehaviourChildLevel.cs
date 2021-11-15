@@ -61,6 +61,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     private bool isRead = false;
 
+    public GameObject Panel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -144,7 +146,10 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collidedObject = collision.gameObject;
-
+        if (collidedObject.name.Contains("Door"))
+        {
+            Panel.gameObject.SetActive(true);
+        }
         if (collidedObject.name.Contains("1st Room Trigger"))
         {
             GameControllerChildLevel gc = GameObject.FindObjectOfType<GameControllerChildLevel>

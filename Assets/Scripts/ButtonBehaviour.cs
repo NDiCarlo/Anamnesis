@@ -18,6 +18,16 @@ public class ButtonBehaviour : MonoBehaviour
     }
     public void dialogueScene()
     {
-        SceneManager.LoadScene("DialogueScene");
+        SceneManager.LoadScene("DialogueScene2");
+    }
+
+    public void dialogueScene2()
+    {
+        SceneManager.LoadScene("DialogueScene3");
+    }
+
+    public void dialogueScene3()
+    {
+        SceneManager.LoadScene("DialogueScene4");
     }
 }
