@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  BossPanel: {fileID: 0}
+  Panel: {fileID: 0}
   TriggerFirstRoomEnemies: {fileID: 0}
   TriggerSecondRoomEnemies: {fileID: 0}
   TriggerThirdRoomEnemies: {fileID: 0}
@@ -696,6 +696,8 @@ MonoBehaviour:
   maxHealth: 0
   timestamp: 0
   Bow: {fileID: 0}
+  door: {fileID: 0}
+  afterBossDialogue: {fileID: 0}
 --- !u!212 &535836159
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1327,7 +1329,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 0ff76dd66fa4e024aab35d1961c98855, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 0ebcf3896d9fd6d4ca01c068fa181949, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -2264,7 +2266,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 0ff76dd66fa4e024aab35d1961c98855, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 0ebcf3896d9fd6d4ca01c068fa181949, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
