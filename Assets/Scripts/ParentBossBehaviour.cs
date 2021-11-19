@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ParentBossBehaviour : MonoBehaviour
 {
@@ -34,6 +35,23 @@ public class ParentBossBehaviour : MonoBehaviour
             pb.afterBossDialogue.SetActive(true);
 
             Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedObject = collision.gameObject;
+
+        if (collidedObject.name.Contains("Bullet"))
+        {
+            health--;
+        }
+        if (collidedObject.name.Contains("Arrow"))
+        {
+            health--;
+        }
+        if (collidedObject.name.Contains("Weapon Spear"))
+        {
+            health--;
         }
     }
 

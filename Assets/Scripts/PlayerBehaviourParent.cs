@@ -81,7 +81,6 @@ public class PlayerBehaviourParent : MonoBehaviour
     void Update()
     {
         Attack();
-        Attack();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             enableBow = false;
@@ -277,6 +276,32 @@ public class PlayerBehaviourParent : MonoBehaviour
             }
         }
         if (collidedObject.name.Contains("StationaryEnemyBulletParentLevel"))
+        {
+            health--;
+
+            timestamp = Time.time;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
+            }
+        }
+        if (collidedObject.name.Contains("ParentBoss"))
+        {
+            health--;
+
+            timestamp = Time.time;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
+            }
+        }
+        if (collidedObject.name.Contains("ParentAttack"))
         {
             health--;
 

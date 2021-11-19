@@ -59,13 +59,33 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public bool enableSpear = false;
 
-    private bool isRead = false;
+    public bool isRead = false;
 
     public GameObject Panel;
 
     public GameObject door;
 
     public GameObject afterbossdialogue;
+
+    public GameObject TriggerBoss;
+
+    public GameObject InstantiateBossTrigger;
+
+    public GameObject InstantiateBossTrigger2;
+
+    public GameObject RedBox1;
+
+    public GameObject RedBox2;
+
+    public GameObject RedBox3;
+
+    public GameObject RedBox4;
+
+    public GameObject RedBox5;
+
+    public GameObject RedBox6;
+
+    public GameObject RedBox7;
 
     // Start is called before the first frame update
     void Start()
@@ -197,26 +217,44 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         if (collidedObject.name.Contains("1st Open Room Dialogue"))
         {
             firstroomDialogue.SetActive(true);
+            Destroy(RedBox1);
+
         }
         if (collidedObject.name.Contains("2nd Open Room Dialogue"))
         {
             secondroomDialogue.SetActive(true);
+            Destroy(RedBox2);
         }
         if (collidedObject.name.Contains("3rd Open Room Dialogue"))
         {
             thirdroomDialogue.SetActive(true);
+            Destroy(RedBox3);
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
             beforeBossDialogue.SetActive(true);
+            Destroy(RedBox4);
+            Destroy(RedBox5);
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
             afterBossDialogue.SetActive(true);
+            Destroy(RedBox6);
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
             afterBossclosedDialogue.SetActive(true);
+            Destroy(RedBox7);
+        }
+        if (collidedObject.name.Contains("InstantiateBossTrigger"))
+        {
+            GameControllerChildLevel gc = GameObject.FindObjectOfType<GameControllerChildLevel>
+                ();
+            gc.spawnBossBehaviour();
+            Destroy(TriggerBoss);
+            Destroy(InstantiateBossTrigger);
+            Destroy(InstantiateBossTrigger2);
+
         }
     }
 
@@ -255,6 +293,45 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             }
         }
         if (collidedObject.name.Contains("StationaryEnemyChildLevel"))
+        {
+            health--;
+
+            timestamp = Time.time;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
+            }
+        }
+        if (collidedObject.name.Contains("ChildBoss"))
+        {
+            health--;
+
+            timestamp = Time.time;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
+            }
+        }
+        if (collidedObject.name.Contains("ChildScythe"))
+        {
+            health--;
+
+            timestamp = Time.time;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
+            }
+        }
+        if (collidedObject.name.Contains("AoE Damage"))
         {
             health--;
 

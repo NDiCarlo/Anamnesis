@@ -30,9 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ParentLevelOpen.unity
     guid: 64c8713738e0ca84f9131f164ae3bc1d
   - enabled: 1
-    path: Assets/Scenes/DialogueScene 2.unity
-    guid: 45a9cecad0512ae4fb3f274d24bb8685
-  - enabled: 1
     path: Assets/Scenes/DialogueScene3.unity
     guid: befda3b3e377f594592464c810e63396
   - enabled: 1
@@ -50,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DialogueScene8.unity
     guid: a3d1442b1a74242409abd3c0715dcae7
+  - enabled: 1
+    path: Assets/Scenes/DialogueScene 2.unity
+    guid: 45a9cecad0512ae4fb3f274d24bb8685
   m_configObjects: {}

@@ -18,7 +18,7 @@ public class ButtonBehaviour : MonoBehaviour
     }
     public void dialogueScene()
     {
-        SceneManager.LoadScene("DialogueScene2");
+        SceneManager.LoadScene("DialogueScene 2");
     }
 
     public void dialogueScene2()
@@ -29,5 +29,14 @@ public class ButtonBehaviour : MonoBehaviour
     public void dialogueScene3()
     {
         SceneManager.LoadScene("DialogueScene4");
+    }
+
+    public void LoadScene1()
+    {
+        SceneManager.LoadScene("ChildLevelScene");
+    }
+    public void LoadScene2()
+    {
+        SceneManager.LoadScene("ChildLevelOpenScene");
     }
 }
