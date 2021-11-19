@@ -36,7 +36,7 @@ public class LoverLevelBossBehaviour : MonoBehaviour
     void Update()
     {
         BossMovement();
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
 
@@ -55,7 +55,6 @@ public class LoverLevelBossBehaviour : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) <= range)
         {
             DamageAOE.SetActive(true);
-            
         }
         if (Vector2.Distance(transform.position, player.position) >= range)
         {
@@ -75,6 +74,19 @@ public class LoverLevelBossBehaviour : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedObject = collision.gameObject;
+
+        if (collidedObject.name.Contains("Bullet"))
+        {
+            health--;
+        }
+        if (collidedObject.name.Contains("Arrow"))
+        {
+            health--;
+        }
+    }
     public float speed;
     private IEnumerator BossBehaviour()
     {

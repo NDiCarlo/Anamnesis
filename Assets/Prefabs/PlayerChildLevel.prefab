@@ -304,6 +304,20 @@ MonoBehaviour:
   Bow: {fileID: 0}
   Spear: {fileID: 0}
   enableSpear: 0
+  isRead: 0
+  Panel: {fileID: 0}
+  door: {fileID: 0}
+  afterbossdialogue: {fileID: 0}
+  TriggerBoss: {fileID: 0}
+  InstantiateBossTrigger: {fileID: 0}
+  InstantiateBossTrigger2: {fileID: 0}
+  RedBox1: {fileID: 0}
+  RedBox2: {fileID: 0}
+  RedBox3: {fileID: 0}
+  RedBox4: {fileID: 0}
+  RedBox5: {fileID: 0}
+  RedBox6: {fileID: 0}
+  RedBox7: {fileID: 0}
 --- !u!50 &7513356442401315171
 Rigidbody2D:
   serializedVersion: 4

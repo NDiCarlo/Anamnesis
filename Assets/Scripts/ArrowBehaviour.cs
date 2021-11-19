@@ -78,6 +78,14 @@ public class ArrowBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collidedObject.name.Contains("LoverLevelBoss"))
+        {
+            Destroy(gameObject);
+        }
+        if (collidedObject.name.Contains("ChildBoss"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void arrowMovement()

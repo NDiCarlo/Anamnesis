@@ -60,11 +60,24 @@ public class PlayerBehaviour : MonoBehaviour
 
     public GameObject Bow;
 
-    private bool isRead = false;
+    public bool isRead = false;
 
     public GameObject door;
 
     public GameObject afterBossDialogue;
+
+    public GameObject RedBox1;
+
+    public GameObject RedBox2;
+
+    public GameObject RedBox3;
+
+    public GameObject RedBox4;
+
+    public GameObject RedBox5;
+
+    public GameObject RedBox6;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -196,26 +209,32 @@ public class PlayerBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("Enchant Weapon Paper"))
         {
             EnchantWeaponPanel.gameObject.SetActive(true);
+            Destroy(RedBox3);
         }
         if (collidedObject.name.Contains("1st Open Room Dialogue"))
         {
             firstDiagloguePanel.gameObject.SetActive(true);
+            Destroy(RedBox1);
         }
         if (collidedObject.name.Contains("2nd Open Room Dialogue"))
         {
             secondDialoguePanel.gameObject.SetActive(true);
+            Destroy(RedBox2);
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
             dialoguebeforebossPanel.gameObject.SetActive(true);
+            Destroy(RedBox4);
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
             dialogueAfterbossPanel.gameObject.SetActive(true);
+            Destroy(RedBox5);
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
             dialogueAfterbossClosedPanel.gameObject.SetActive(true);
+            Destroy(RedBox6);
         }
     }
     public void EnchantBow()
@@ -262,6 +281,45 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 deathPanel.SetActive(true);
                 livesNumber.enabled = false;
+            }
+        }
+        if (collidedObject.name.Contains("LoverLevelBoss"))
+        {
+            health--;
+
+            timestamp = Time.time;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
+            }
+        }
+        if (collidedObject.name.Contains("BossBulletLoverLevel"))
+        {
+            health--;
+
+            timestamp = Time.time;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
+            }
+        }
+        if (collidedObject.name.Contains("AoE Damage"))
+        {
+            health--;
+
+            timestamp = Time.time;
+
+            if (health <= 0)
+            {
+                deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
     }

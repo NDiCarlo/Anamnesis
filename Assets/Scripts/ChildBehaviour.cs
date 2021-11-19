@@ -9,14 +9,17 @@ public class ChildBehaviour : MonoBehaviour
     public float speed;
     public SpriteRenderer childLevelBoss;
     public float range = 10f;
-    public GameObject damageAOE;
+    public GameObject DamageAOE;
     public GameObject projectile;
     public float health = 15f;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        GameObject playerGO = GameObject.Find("Player");
+        player = playerGO.transform;
+        rb = GetComponent<Rigidbody2D>();
         StartCoroutine(BossBehaviour());
     }
 
@@ -79,7 +82,11 @@ public class ChildBehaviour : MonoBehaviour
 
         attack();
 
-        damageAOE.SetActive(false);
+        childLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.2f);
+
+        DamageAOE.SetActive(false);
 
         yield return new WaitForSeconds(1.5f);
 
@@ -94,19 +101,29 @@ public class ChildBehaviour : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) <= range)
         {
-            damageAOE.SetActive(true);
+            DamageAOE.SetActive(true);
         }
-        else
+        if(Vector2.Distance(transform.position, player.position) >= range)
         {
+            DamageAOE.SetActive(false);
             Instantiate(projectile, transform.position, transform.rotation);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("Player"))
-        {
+        GameObject collidedObject = collision.gameObject;
 
+        if (collidedObject.name.Contains("Bullet"))
+        {
+            health--;
+        }
+        if (collidedObject.name.Contains("Arrow"))
+        {
+            health--;
+        }
+        if (collidedObject.name.Contains("Weapon Spear"))
+        {
+            health--;
         }
     }
 }
