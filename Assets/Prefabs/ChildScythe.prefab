@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9140847528201443952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.5422, y: 52.0093, z: 0}
-  m_LocalScale: {x: 2.766, y: 2.412, z: 1}
+  m_LocalPosition: {x: 26.9162, y: 53.3541, z: 0}
+  m_LocalScale: {x: 5.0775943, y: 6.323999, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
-  speed: 5
+  speed: 7
   target: {fileID: 7513356442401315181, guid: bcf566ecad9f23940ac813884d3ab9e9, type: 3}
 --- !u!50 &1948616135879252652
 Rigidbody2D:

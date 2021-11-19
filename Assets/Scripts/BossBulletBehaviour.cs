@@ -20,7 +20,7 @@ public class BossBulletBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public PlayerBehaviour target;
@@ -32,5 +32,14 @@ public class BossBulletBehaviour : MonoBehaviour
         moveDirection = (target.transform.position - transform.position).normalized * speed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 10f);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collidedObject = collision.gameObject;
+
+        if (collidedObject.name.Contains("Walls"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

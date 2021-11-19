@@ -39,4 +39,12 @@ public class ButtonBehaviour : MonoBehaviour
     {
         SceneManager.LoadScene("ChildLevelOpenScene");
     }
+    public void LoadScene3()
+    {
+        SceneManager.LoadScene("ParentLevelOpen");
+    }
+    public void LoadScene4()
+    {
+        SceneManager.LoadScene("ParentLevel");
+    }
 }

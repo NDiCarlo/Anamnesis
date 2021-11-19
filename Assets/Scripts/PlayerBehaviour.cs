@@ -60,7 +60,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public GameObject Bow;
 
-    public bool isRead = false;
+    public static bool isRead = false;
 
     public GameObject door;
 

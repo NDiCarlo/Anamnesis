@@ -59,7 +59,7 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public bool enableSpear = false;
 
-    public bool isRead = false;
+    public static bool isRead = false;
 
     public GameObject Panel;
 
@@ -105,7 +105,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             enableBow = false;
             enableSpear = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+
+        if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerBehaviour.isRead == true)
         {
             enableBow = true;
             enableSpear = false;

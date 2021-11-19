@@ -86,12 +86,12 @@ public class PlayerBehaviourParent : MonoBehaviour
             enableBow = false;
             enableSpear = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerBehaviour.isRead == true)
         {
             enableBow = true;
             enableSpear = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && PlayerBehaviourChildLevel.isRead == true)
         {
             enableBow = false;
             enableSpear = true;
