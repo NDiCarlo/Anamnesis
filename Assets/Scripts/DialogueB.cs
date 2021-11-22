@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueB : MonoBehaviour
 {
-    private float waitTime = .05f;
+    private float waitTime = .04f;
     private Text showText;
     public string input;
     private void Awake()
@@ -23,17 +23,17 @@ public class DialogueB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             waitTime = 0.00f;
         }
     }
     protected IEnumerator WriteText(string input, Text showText)
-    {
+    { 
         for (int i = 0; i < input.Length; i++)
         {
             showText.text += input[i];
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSecondsRealtime(waitTime);
         }
     }
 }

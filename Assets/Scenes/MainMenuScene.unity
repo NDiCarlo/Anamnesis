@@ -698,6 +698,12 @@ MonoBehaviour:
   Bow: {fileID: 0}
   door: {fileID: 0}
   afterBossDialogue: {fileID: 0}
+  RedBox1: {fileID: 0}
+  RedBox2: {fileID: 0}
+  RedBox3: {fileID: 0}
+  RedBox4: {fileID: 0}
+  RedBox5: {fileID: 0}
+  RedBox6: {fileID: 0}
 --- !u!212 &535836159
 SpriteRenderer:
   m_ObjectHideFlags: 0
