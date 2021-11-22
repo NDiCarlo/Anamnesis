@@ -3483,9 +3483,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241eddf792e475b4ea3bb53278734edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: 'The choices you make in the present will affect the challenge of overcoming
+  input: The choices you make in the present will affect the challenge of overcoming
     your past. Opening your heart allows access to the depths of your pain, but to
-    instigate such trauma may strengthen those very horrors. '
+    instigate such trauma may strengthen those very horrors. If you would like to
+    read the dialogue faster, hold down the "LeftShift" Key
 --- !u!114 &1404946518
 MonoBehaviour:
   m_ObjectHideFlags: 0
