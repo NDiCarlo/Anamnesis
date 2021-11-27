@@ -79,7 +79,7 @@ public class ParentBossBehaviour : MonoBehaviour
 
         Instantiate(telegraph, memorizePos, transform.rotation);
 
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.3f);
 
         Instantiate(attack, memorizePos, transform.rotation);
 

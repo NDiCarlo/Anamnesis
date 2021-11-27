@@ -311,7 +311,7 @@ public class PlayerBehaviourParent : MonoBehaviour
         }
         if (collidedObject.name.Contains("ParentAttack"))
         {
-            health--;
+            health -=2;
 
             timestamp = Time.time;
 

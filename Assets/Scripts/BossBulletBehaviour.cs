@@ -41,5 +41,9 @@ public class BossBulletBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collidedObject.name.Contains("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

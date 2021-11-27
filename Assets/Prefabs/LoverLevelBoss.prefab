@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7600869799696481056}
   - component: {fileID: 3101588963461738925}
-  - component: {fileID: 3104525958208240695}
+  - component: {fileID: 3518080969767045004}
   m_Layer: 17
   m_Name: AoE Damage
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3104525958208240695
+--- !u!58 &3518080969767045004
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,7 +96,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000023841858, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!1 &8491609701369015564
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c16a737c12bded42a87e72dc7abf326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 30
   range: 10
   DamageAOE: {fileID: 8197142753363088434}
   BossBullet: {fileID: 5597847293553286475, guid: 6d0aa6c098c4c3841ae89fac033a98d7, type: 3}

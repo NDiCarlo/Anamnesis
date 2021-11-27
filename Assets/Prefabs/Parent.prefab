@@ -102,7 +102,7 @@ MonoBehaviour:
   range: 10
   telegraph: {fileID: 7400020450346153411, guid: bbf48315242247a419f374e1bf6bdfd5, type: 3}
   attack: {fileID: 4973211438967198409, guid: 7d924b4111e3dec48a897ea5a315115d, type: 3}
-  health: 50
+  health: 30
 --- !u!50 &1700060446533527702
 Rigidbody2D:
   serializedVersion: 4
