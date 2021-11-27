@@ -91,7 +91,6 @@ public class PlayerBehaviour : MonoBehaviour
     public Sprite fullHealth;
 
     public bool RegenHealth;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -308,7 +307,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (collidedObject.name.Contains("BossBulletLoverLevel"))
         {
-            health--;
+            health -= 2;
 
             timestamp = Time.time;
 
@@ -319,7 +318,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (collidedObject.name.Contains("AoE Damage"))
         {
-            health--;
+            health -= 2;
 
             timestamp = Time.time;
 

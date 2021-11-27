@@ -66,23 +66,23 @@ public class MoveTowardsEnemyChildLevel : MonoBehaviour
             }
             if (health == 5)
             {
-                MoveTowards.transform.localScale = new Vector2(.9f, .9f);
+                MoveTowards.transform.localScale = new Vector3(.95f, .95f);
             }
             if (health == 4)
             {
-                MoveTowards.transform.localScale = new Vector2(.8f, .8f);
+                MoveTowards.transform.localScale = new Vector3(.85f, .85f);
             }
             if (health == 3)
             {
-                MoveTowards.transform.localScale = new Vector2(.7f, .7f);
+                MoveTowards.transform.localScale = new Vector3(.75f, .75f);
             }
             if (health == 2)
             {
-                MoveTowards.transform.localScale = new Vector2(.6f, .6f);
+                MoveTowards.transform.localScale = new Vector3(.65f, .65f);
             }
             if (health == 1)
             {
-                MoveTowards.transform.localScale = new Vector2(.5f, .5f);
+                MoveTowards.transform.localScale = new Vector3(.60f, .60f);
             }
         }
         if (collidedObject.name.Contains("Weapon Spear"))
@@ -99,23 +99,23 @@ public class MoveTowardsEnemyChildLevel : MonoBehaviour
             }
             if (health == 5)
             {
-                MoveTowards.transform.localScale = new Vector2(.9f, .9f);
+                MoveTowards.transform.localScale = new Vector3(.95f, .95f);
             }
             if (health == 4)
             {
-                MoveTowards.transform.localScale = new Vector2(.8f, .8f);
+                MoveTowards.transform.localScale = new Vector3(.85f, .85f);
             }
             if (health == 3)
             {
-                MoveTowards.transform.localScale = new Vector2(.7f, .7f);
+                MoveTowards.transform.localScale = new Vector3(.75f, .75f);
             }
             if (health == 2)
             {
-                MoveTowards.transform.localScale = new Vector2(.6f, .6f);
+                MoveTowards.transform.localScale = new Vector3(.65f, .65f);
             }
             if (health == 1)
             {
-                MoveTowards.transform.localScale = new Vector2(.5f, .5f);
+                MoveTowards.transform.localScale = new Vector3(.60f, .60f);
             }
         }
         if (collidedObject.name.Contains("Arrow"))
@@ -132,23 +132,23 @@ public class MoveTowardsEnemyChildLevel : MonoBehaviour
             }
             if (health == 5)
             {
-                MoveTowards.transform.localScale = new Vector2(.9f, .9f);
+                MoveTowards.transform.localScale = new Vector3(.95f, .95f);
             }
             if (health == 4)
             {
-                MoveTowards.transform.localScale = new Vector2(.8f, .8f);
+                MoveTowards.transform.localScale = new Vector3(.85f, .85f);
             }
             if (health == 3)
             {
-                MoveTowards.transform.localScale = new Vector2(.7f, .7f);
+                MoveTowards.transform.localScale = new Vector3(.75f, .75f);
             }
             if (health == 2)
             {
-                MoveTowards.transform.localScale = new Vector2(.6f, .6f);
+                MoveTowards.transform.localScale = new Vector3(.65f, .65f);
             }
             if (health == 1)
             {
-                MoveTowards.transform.localScale = new Vector2(.5f, .5f);
+                MoveTowards.transform.localScale = new Vector3(.60f, .60f);
             }
         }
     }

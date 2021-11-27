@@ -81,5 +81,9 @@ public class BulletBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collidedObject.name.Contains("Parent"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -103,7 +103,7 @@ MonoBehaviour:
   range: 10
   DamageAOE: {fileID: 8832077945822160053}
   projectile: {fileID: 9140847528201443952, guid: 5bd9eea6e9da09040b9523d024402909, type: 3}
-  health: 15
+  health: 30
 --- !u!50 &-4165737584794877703
 Rigidbody2D:
   serializedVersion: 4
