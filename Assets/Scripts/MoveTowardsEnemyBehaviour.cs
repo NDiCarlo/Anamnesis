@@ -35,12 +35,9 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
             Vector3 newPos = Vector3.MoveTowards(transform.position,
                                                player.position,
                                                Time.deltaTime * speed);
-
             transform.position = newPos;
         }
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
