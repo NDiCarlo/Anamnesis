@@ -27,9 +27,7 @@ public class RegenerateHealthBehaviour : MonoBehaviour
             if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 5f))
             {
                 pb.health++;
-                pb.RegenHealth = true;
             }
-
         }
         if (SceneManager.GetActiveScene().name == "ParentLevel")
         {
@@ -39,7 +37,6 @@ public class RegenerateHealthBehaviour : MonoBehaviour
             if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 5f))
             {
                 pb.health++;
-                pb.RegenHealth = true;
             }
         }
         if (SceneManager.GetActiveScene().name == "ChildLevelScene")
@@ -50,7 +47,6 @@ public class RegenerateHealthBehaviour : MonoBehaviour
             if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 5f))
             {
                 pb.health++;
-                pb.RegenHealth = true;
             }
         }
     }

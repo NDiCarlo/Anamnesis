@@ -43,6 +43,10 @@ public class PlayerBehaviourParent : MonoBehaviour
 
     public GameObject deathPanel;
 
+    public Text livesNumber;
+
+    public Text livesLeft;
+
     public int maxHealth;
 
     public float timestamp = 0.0f;
@@ -66,24 +70,6 @@ public class PlayerBehaviourParent : MonoBehaviour
     public GameObject afterBossDialogue;
 
     public GameObject TriggerBoss;
-
-    public Image health1;
-
-    public Image health2;
-
-    public Image health3;
-
-    public Image health4;
-
-    public Image health5;
-
-    public Sprite halfHealth;
-
-    public Sprite emptyHealth;
-
-    public Sprite fullHealth;
-
-    public bool RegenHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -111,7 +97,7 @@ public class PlayerBehaviourParent : MonoBehaviour
             enableSpear = true;
         }
 
-        HealthSprites();
+        livesNumber.text = health.ToString();
     }
     void FixedUpdate()
     {
@@ -285,6 +271,8 @@ public class PlayerBehaviourParent : MonoBehaviour
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
         if (collidedObject.name.Contains("StationaryEnemyBulletParentLevel"))
@@ -296,6 +284,8 @@ public class PlayerBehaviourParent : MonoBehaviour
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
         if (collidedObject.name.Contains("ParentBoss"))
@@ -307,6 +297,8 @@ public class PlayerBehaviourParent : MonoBehaviour
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
         }
         if (collidedObject.name.Contains("ParentAttack"))
@@ -318,95 +310,9 @@ public class PlayerBehaviourParent : MonoBehaviour
             if (health <= 0)
             {
                 deathPanel.SetActive(true);
+                livesNumber.enabled = false;
+                livesLeft.enabled = false;
             }
-        }
-    }
-    public void HealthSprites()
-    {
-        if (health == 10)
-        {
-            RegenHealth = false;
-            health5.sprite = fullHealth;
-        }
-        if (health == 9 && RegenHealth == false)
-        {
-            health5.sprite = halfHealth;
-        }
-        if (health == 8 && RegenHealth == false)
-        {
-            health5.sprite = emptyHealth;
-        }
-        if (health == 7 && RegenHealth == false)
-        {
-            health4.sprite = halfHealth;
-        }
-        if (health == 6 && RegenHealth == false)
-        {
-            health4.sprite = emptyHealth;
-        }
-        if (health == 5 && RegenHealth == false)
-        {
-            health3.sprite = halfHealth;
-        }
-        if (health == 4 && RegenHealth == false)
-        {
-            health3.sprite = emptyHealth;
-        }
-        if (health == 3 && RegenHealth == false)
-        {
-            health2.sprite = halfHealth;
-        }
-        if (health == 2 && RegenHealth == false)
-        {
-            health2.sprite = emptyHealth;
-        }
-        if (health == 1 && RegenHealth == false)
-        {
-            health1.sprite = halfHealth;
-        }
-
-        //Helps Sprites RegenHealth
-        if (health == 2 && RegenHealth == true)
-        {
-            health1.sprite = fullHealth;
-        }
-        if (health == 3 && RegenHealth == true)
-        {
-            health2.sprite = halfHealth;
-        }
-        if (health == 4 && RegenHealth == true)
-        {
-            health2.sprite = fullHealth;
-        }
-        if (health == 5 && RegenHealth == true)
-        {
-            health3.sprite = halfHealth;
-        }
-        if (health == 6 && RegenHealth == true)
-        {
-            health3.sprite = fullHealth;
-        }
-        if (health == 7 && RegenHealth == true)
-        {
-            health4.sprite = halfHealth;
-        }
-        if (health == 8 && RegenHealth == true)
-        {
-            health4.sprite = fullHealth;
-        }
-        if (health == 9 && RegenHealth == true)
-        {
-            health5.sprite = halfHealth;
-        }
-
-        if (health == 0)
-        {
-            health1.enabled = false;
-            health2.enabled = false;
-            health3.enabled = false;
-            health4.enabled = false;
-            health5.enabled = false;
-
         }
     }
 }
