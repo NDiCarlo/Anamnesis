@@ -129,6 +129,7 @@ MonoBehaviour:
   player: {fileID: 7513356442401315168, guid: bcf566ecad9f23940ac813884d3ab9e9, type: 3}
   health: 0
   range: 13
+  stationaryRed: {fileID: 3971213687361098385}
 --- !u!50 &8806333858710070645
 Rigidbody2D:
   serializedVersion: 4

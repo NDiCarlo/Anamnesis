@@ -13,6 +13,8 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
     public GameObject MoveTowards;
 
     public float range;
+
+    public SpriteRenderer moveTowardsRed;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,8 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
         {
             health--;
 
+            StartCoroutine(hitFeedback());
+
             if (health == 0)
             {
                 Destroy(gameObject);
@@ -92,6 +96,8 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
         {
             health--;
 
+            StartCoroutine(hitFeedback());
+
             if (health == 0)
             {
                 Destroy(gameObject);
@@ -121,6 +127,14 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
                 MoveTowards.transform.localScale = new Vector3(.60f, .60f);
             }
         }
+    }
+    private IEnumerator hitFeedback()
+    {
+        moveTowardsRed.color = Color.red;
+
+        yield return new WaitForSeconds(.1f);
+
+        moveTowardsRed.color = Color.grey;
     }
 }
     

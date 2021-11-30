@@ -70,6 +70,11 @@ public class GameControllerChildLevel : MonoBehaviour
 
             player.GetComponent<SpriteRenderer>().enabled = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
     public void spawnMoveTowardsEnemy()
     {

@@ -14,6 +14,8 @@ public class StationaryEnemyBehaviour : MonoBehaviour
     public int health;
 
     public float range;
+
+    public SpriteRenderer stationaryRed;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,8 @@ public class StationaryEnemyBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("Bullet"))
         {
             health--;
+
+            StartCoroutine(hitFeedback());
 
             if (health == 0)
             {
@@ -76,6 +80,8 @@ public class StationaryEnemyBehaviour : MonoBehaviour
         {
             health--;
 
+            StartCoroutine(hitFeedback());
+
             if (health == 0)
             {
                 GameController gc = GameObject.FindObjectOfType<GameController>
@@ -106,5 +112,13 @@ public class StationaryEnemyBehaviour : MonoBehaviour
                 transform.localScale = new Vector2(.5f, .5f);
             }
         }
+    }
+    private IEnumerator hitFeedback()
+    {
+        stationaryRed.color = Color.red;
+
+        yield return new WaitForSeconds(.1f);
+
+        stationaryRed.color = Color.grey;
     }
 }

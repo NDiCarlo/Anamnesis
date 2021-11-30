@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviourChildLevel : MonoBehaviour
 {
@@ -49,15 +50,11 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public float timestamp = 0.0f;
 
-    public GameObject Bow;
-
     public GameObject Spear;
 
     public bool enableSpear = false;
 
     public static bool isRead = false;
-
-    public GameObject Panel;
 
     public GameObject door;
 
@@ -105,7 +102,6 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Bow.SetActive(true);
         Spear.SetActive(false);
         Bullet.SetActive(true);
     }
@@ -165,10 +161,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             nextFire = Time.time + fireRate;
             Instantiate(Arrow, transform.position, transform.rotation);
-            Instantiate(Bow, transform.position, transform.rotation);
             Bullet.SetActive(false);
             Spear.SetActive(false);
-            Bow.SetActive(true);
             Arrow.SetActive(true);
         }
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true)
@@ -176,8 +170,6 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             nextFire = Time.time + fireRate;
             Instantiate(Spear, transform.position, transform.rotation);
             Bullet.SetActive(false);
-            Arrow.SetActive(false);
-            Bow.SetActive(false);
             Spear.SetActive(true);
         }
     }
@@ -185,9 +177,15 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collidedObject = collision.gameObject;
-        if (collidedObject.name.Contains("Door"))
+
+        if (collidedObject.name.Contains("Door") && (SceneManager.GetActiveScene().name == "ChildLevelOPENScene"))
         {
-            Panel.gameObject.SetActive(true);
+            PlayerBehaviour.numberofLevels++;
+            SceneManager.LoadScene("DialogueScene4");
+        }
+        else if (collidedObject.name.Contains("Door"))
+        {
+            SceneManager.LoadScene("DialogueScene3");
         }
         if (collidedObject.name.Contains("1st Room Trigger"))
         {
@@ -287,6 +285,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             health--;
 
+            RegenHealth = false;
+
             timestamp = Time.time;
 
             if (health <= 0)
@@ -297,6 +297,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         if (collidedObject.name.Contains("StationaryEnemyBulletChildLevel"))
         {
             health--;
+
+            RegenHealth = false;
 
             timestamp = Time.time;
 
@@ -309,6 +311,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             health--;
 
+            RegenHealth = false;
+
             timestamp = Time.time;
 
             if (health <= 0)
@@ -319,6 +323,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         if (collidedObject.name.Contains("ChildBoss"))
         {
             health--;
+
+            RegenHealth = false;
 
             timestamp = Time.time;
 
@@ -331,6 +337,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             health--;
 
+            RegenHealth = false;
+
             timestamp = Time.time;
 
             if (health <= 0)
@@ -341,6 +349,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         if (collidedObject.name.Contains("AoE Damage"))
         {
             health--;
+
+            RegenHealth = false;
 
             timestamp = Time.time;
 

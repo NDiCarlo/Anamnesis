@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class PlayerBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
 
     public float speed = 5;
-
-    public GameObject Panel;
 
     public GameObject TriggerFirstRoomEnemies;
 
@@ -54,8 +54,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     public float timestamp = 0.0f;
 
-    public GameObject Bow;
-
     public static bool isRead = false;
 
     public GameObject door;
@@ -91,13 +89,14 @@ public class PlayerBehaviour : MonoBehaviour
     public Sprite fullHealth;
 
     public bool RegenHealth;
+
+    public static int numberofLevels;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Bullet.gameObject.SetActive(true);
         Arrow.SetActive(false);
-        Bow.SetActive(false);
         RegenHealth = false;
     }
 
@@ -145,15 +144,12 @@ public class PlayerBehaviour : MonoBehaviour
             Instantiate(Bullet, transform.position, transform.rotation);
             Bullet.SetActive(true);
             Arrow.SetActive(false);
-            Bow.SetActive(false);
         }
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Arrow, transform.position, transform.rotation);
-            Instantiate(Bow, transform.position, transform.rotation);
             Arrow.SetActive(true);
-            Bow.SetActive(true);
             Bullet.SetActive(false);
         }
     }
@@ -161,9 +157,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         GameObject collidedObject = collision.gameObject;
 
-        if (collidedObject.name.Contains("Door"))
+        if (collidedObject.name.Contains("Door") && (SceneManager.GetActiveScene().name == "LoverLevelOpenScene"))
         {
-            Panel.gameObject.SetActive(true);
+            numberofLevels++;
+            SceneManager.LoadScene("DialogueScene 2");
+        }
+        else if (collidedObject.name.Contains("Door"))
+        {
+            SceneManager.LoadScene("DialogueScene 2");
         }
         if (collidedObject.name.Contains("Trigger First Room Enemies"))
         {
@@ -265,6 +266,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             health--;
 
+            RegenHealth = false;
+
             timestamp = Time.time;
 
             if (health <= 0)
@@ -275,6 +278,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("StationaryEnemyBullet"))
         {
             health--;
+
+            RegenHealth = false;
 
             timestamp = Time.time;
 
@@ -287,6 +292,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             health--;
 
+            RegenHealth = false;
+
             timestamp = Time.time;
 
             if (health <= 0)
@@ -297,6 +304,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("LoverLevelBoss"))
         {
             health--;
+
+            RegenHealth = false;
 
             timestamp = Time.time;
 
@@ -309,6 +318,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             health -= 2;
 
+            RegenHealth = false;
+
             timestamp = Time.time;
 
             if (health <= 0)
@@ -319,6 +330,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("AoE Damage"))
         {
             health -= 2;
+
+            RegenHealth = false;
 
             timestamp = Time.time;
 

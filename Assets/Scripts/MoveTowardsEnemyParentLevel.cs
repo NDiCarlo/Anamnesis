@@ -13,6 +13,8 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
     public GameObject MoveTowards;
 
     public float range;
+
+    public SpriteRenderer moveTowardsRed;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,8 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
         {
             health--;
 
+            StartCoroutine(hitFeedback());
+
             if (health == 0)
             {
                 Destroy(gameObject);
@@ -77,6 +81,8 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
         if (collidedObject.name.Contains("Weapon Spear"))
         {
             health--;
+
+            StartCoroutine(hitFeedback());
 
             if (health == 0)
             {
@@ -118,6 +124,8 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
         {
             health--;
 
+            StartCoroutine(hitFeedback());
+
             if (health == 0)
             {
                 Destroy(gameObject);
@@ -147,5 +155,14 @@ public class MoveTowardsEnemyParentLevel : MonoBehaviour
                 MoveTowards.transform.localScale = new Vector2(1f, 1f);
             }
         }
+    }
+
+    private IEnumerator hitFeedback()
+    {
+        moveTowardsRed.color = Color.red;
+
+        yield return new WaitForSeconds(.1f);
+
+        moveTowardsRed.color = Color.grey;
     }
 }

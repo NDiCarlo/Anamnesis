@@ -41,6 +41,10 @@ public class RegenerateHealthBehaviour : MonoBehaviour
                 pb.health++;
                 pb.RegenHealth = true;
             }
+            if (pb.health < pb.maxHealth && Time.time > (pb.timestamp + 0f))
+            {
+                pb.RegenHealth = false;
+            }
         }
         if (SceneManager.GetActiveScene().name == "ChildLevelScene")
         {

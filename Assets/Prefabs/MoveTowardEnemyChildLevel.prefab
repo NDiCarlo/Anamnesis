@@ -100,6 +100,7 @@ MonoBehaviour:
   health: 0
   MoveTowards: {fileID: 4680004916365407167}
   range: 12
+  moveTowardsRed: {fileID: 2802039457259384166}
   speed: 2
 --- !u!61 &3597234420285528080
 BoxCollider2D:

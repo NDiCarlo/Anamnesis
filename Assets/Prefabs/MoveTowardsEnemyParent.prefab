@@ -49,6 +49,7 @@ MonoBehaviour:
   health: 0
   MoveTowards: {fileID: 3239139276000659006}
   range: 20
+  moveTowardsRed: {fileID: 5396389480377702631}
   speed: 4
 --- !u!212 &5396389480377702631
 SpriteRenderer:

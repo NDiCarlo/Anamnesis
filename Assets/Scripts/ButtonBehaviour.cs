@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ButtonBehaviour : MonoBehaviour
 {
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,21 +15,6 @@ public class ButtonBehaviour : MonoBehaviour
     {
         
     }
-    public void dialogueScene()
-    {
-        SceneManager.LoadScene("DialogueScene 2");
-    }
-
-    public void dialogueScene2()
-    {
-        SceneManager.LoadScene("DialogueScene3");
-    }
-
-    public void dialogueScene3()
-    {
-        SceneManager.LoadScene("DialogueScene4");
-    }
-
     public void LoadScene1()
     {
         SceneManager.LoadScene("ChildLevelScene");

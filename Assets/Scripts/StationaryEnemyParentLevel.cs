@@ -14,6 +14,8 @@ public class StationaryEnemyParentLevel : MonoBehaviour
     public int health;
 
     public float range;
+
+    public SpriteRenderer stationaryRed;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,8 @@ public class StationaryEnemyParentLevel : MonoBehaviour
         if (collidedObject.name.Contains("Bullet Parent"))
         {
             health--;
+
+            StartCoroutine(hitFeedback());
 
             if (health == 0)
             {
@@ -74,7 +78,9 @@ public class StationaryEnemyParentLevel : MonoBehaviour
             {
                 health--;
 
-                if (health == 0)
+                StartCoroutine(hitFeedback());
+
+            if (health == 0)
                 {
                     Destroy(gameObject);
                     GameControllerParent gc = GameObject.FindObjectOfType<GameControllerParent>
@@ -107,6 +113,8 @@ public class StationaryEnemyParentLevel : MonoBehaviour
         {
             health--;
 
+            StartCoroutine(hitFeedback());
+
             if (health == 0)
             {
                 Destroy(gameObject);
@@ -137,4 +145,12 @@ public class StationaryEnemyParentLevel : MonoBehaviour
             }
         }
     }
+    private IEnumerator hitFeedback()
+    {
+        stationaryRed.color = Color.red;
+
+        yield return new WaitForSeconds(.1f);
+
+        stationaryRed.color = Color.grey;
     }
+}

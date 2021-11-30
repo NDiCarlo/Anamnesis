@@ -52,6 +52,7 @@ MonoBehaviour:
   player: {fileID: 7188371566004737270, guid: 2b9c769aa82bc9a44b09c6152d0830e9, type: 3}
   health: 0
   range: 13
+  stationaryRed: {fileID: 2354653973212178782}
 --- !u!212 &2354653973212178782
 SpriteRenderer:
   m_ObjectHideFlags: 0
