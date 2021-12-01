@@ -24,7 +24,7 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         enemyMovement();
     }
@@ -34,15 +34,11 @@ public class MoveTowardsEnemyBehaviour : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) <= range)
         {
-            Vector3 newPos = Vector3.MoveTowards(transform.position,
+            rb.MovePosition(Vector3.MoveTowards(transform.position,
                                                player.position,
-                                               Time.deltaTime * speed);
-
-            transform.position = newPos;
+                                               Time.deltaTime * speed));
         }
     }
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

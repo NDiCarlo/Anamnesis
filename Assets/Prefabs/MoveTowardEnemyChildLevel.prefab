@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2802039457259384166}
   - component: {fileID: 7139398251175984150}
   - component: {fileID: 3597234420285528080}
-  - component: {fileID: 5574063810139045288}
+  - component: {fileID: -7200063700855049265}
   m_Layer: 6
   m_Name: MoveTowardEnemyChildLevel
   m_TagString: Untagged
@@ -128,7 +128,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &5574063810139045288
+--- !u!50 &-7200063700855049265
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -143,9 +143,9 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4

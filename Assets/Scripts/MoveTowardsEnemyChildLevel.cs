@@ -34,10 +34,9 @@ public class MoveTowardsEnemyChildLevel : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) <= range)
         {
-            Vector3 newPos = Vector3.MoveTowards(transform.position,
-                                               player.position,
-                                               Time.deltaTime * speed);
-            transform.position = newPos;
+            rb.MovePosition(Vector3.MoveTowards(transform.position,
+                                             player.position,
+                                             Time.deltaTime * speed));
         }
     }
 
