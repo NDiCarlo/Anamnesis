@@ -104,6 +104,12 @@ MonoBehaviour:
   DamageAOE: {fileID: 8832077945822160053}
   projectile: {fileID: 9140847528201443952, guid: 5bd9eea6e9da09040b9523d024402909, type: 3}
   health: 30
+  bossBulletLeft: {fileID: 21300000, guid: 48c64e6958006b84c8277f682989b63e, type: 3}
+  bossBulletRight: {fileID: 21300000, guid: 3f36d321eb5566d49a1177f7b2e60332, type: 3}
+  bossLeft: {fileID: 21300000, guid: 0706baa22f578ae48a4da64100b0554c, type: 3}
+  bossRight: {fileID: 21300000, guid: 662e47e9e1b785a499b3deec645e31c7, type: 3}
+  bossSummoningLeft: {fileID: 21300000, guid: cd8be5cd181b5b3499865b11f9d869b6, type: 3}
+  bossSummoningRight: {fileID: 21300000, guid: ffb1a4948ddc5724ca0e7cfd6eae4f34, type: 3}
 --- !u!50 &-4165737584794877703
 Rigidbody2D:
   serializedVersion: 4

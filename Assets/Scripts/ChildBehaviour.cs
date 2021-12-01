@@ -13,6 +13,13 @@ public class ChildBehaviour : MonoBehaviour
     public GameObject projectile;
     public float health = 15f;
     private Rigidbody2D rb;
+    public Sprite bossBulletLeft;
+    public Sprite bossBulletRight;
+    public Sprite bossLeft;
+    public Sprite bossRight;
+    public Sprite bossSummoningLeft;
+    public Sprite bossSummoningRight;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,10 +58,24 @@ public class ChildBehaviour : MonoBehaviour
     {
         if (isMoving)
         {
-            Vector3 newPos = Vector3.MoveTowards(transform.position,
+            if(childLevelBoss.transform.position.x > player.transform.position.x)
+            {
+                childLevelBoss.sprite = bossLeft;
+
+                Vector3 newPos = Vector3.MoveTowards(transform.position,
                                                player.position,
                                                Time.deltaTime * speed);
-            transform.position = newPos;
+                transform.position = newPos;
+            }
+            if (childLevelBoss.transform.position.x < player.transform.position.x)
+            {
+                childLevelBoss.sprite = bossRight;
+
+                Vector3 newPos = Vector3.MoveTowards(transform.position,
+                                               player.position,
+                                               Time.deltaTime * speed);
+                transform.position = newPos;
+            }
         }
     }
 
@@ -82,6 +103,17 @@ public class ChildBehaviour : MonoBehaviour
 
         attack();
 
+        yield return new WaitForSeconds(.5f);
+
+        if (childLevelBoss.transform.position.x > player.transform.position.x)
+        {
+            childLevelBoss.sprite = bossLeft;
+        }
+        if (childLevelBoss.transform.position.x < player.transform.position.x)
+        {
+            childLevelBoss.sprite = bossRight;
+        }
+
         childLevelBoss.color = Color.white;
 
         yield return new WaitForSeconds(.2f);
@@ -101,12 +133,31 @@ public class ChildBehaviour : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.position) <= range)
         {
-            DamageAOE.SetActive(true);
+            if (childLevelBoss.transform.position.x > player.transform.position.x)
+            {
+                DamageAOE.SetActive(true);
+                childLevelBoss.sprite = bossSummoningLeft;
+            }
+            if (childLevelBoss.transform.position.x < player.transform.position.x)
+            {
+                DamageAOE.SetActive(true);
+                childLevelBoss.sprite = bossSummoningRight;
+            }
         }
         if(Vector2.Distance(transform.position, player.position) >= range)
         {
-            DamageAOE.SetActive(false);
-            Instantiate(projectile, transform.position, transform.rotation);
+            if (childLevelBoss.transform.position.x > player.transform.position.x)
+            {
+                DamageAOE.SetActive(false);
+                Instantiate(projectile, transform.position, transform.rotation);
+                childLevelBoss.sprite = bossBulletLeft;
+            }
+            if (childLevelBoss.transform.position.x < player.transform.position.x)
+            {
+                DamageAOE.SetActive(false);
+                Instantiate(projectile, transform.position, transform.rotation);
+                childLevelBoss.sprite = bossBulletRight;
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -116,14 +167,26 @@ public class ChildBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("Bullet"))
         {
             health--;
+            StartCoroutine(hitBoss());
         }
         if (collidedObject.name.Contains("Arrow"))
         {
             health--;
+            StartCoroutine(hitBoss());
         }
         if (collidedObject.name.Contains("Weapon Spear"))
         {
             health--;
+            StartCoroutine(hitBoss());
         }
+    }
+
+    private IEnumerator hitBoss()
+    {
+        childLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.05f);
+
+        childLevelBoss.color = Color.white;
     }
 }

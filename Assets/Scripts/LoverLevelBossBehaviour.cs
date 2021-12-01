@@ -23,6 +23,15 @@ public class LoverLevelBossBehaviour : MonoBehaviour
     public float nextFire;
 
     public SpriteRenderer loverLevelBoss;
+
+    public Sprite loverBossSummoning;
+
+    public Sprite bossBulletspriteLeft;
+
+    public Sprite bossBulletspriteRight;
+
+    public Sprite bossIdleSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,12 +64,24 @@ public class LoverLevelBossBehaviour : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) <= range)
         {
             DamageAOE.SetActive(true);
+            loverLevelBoss.sprite = loverBossSummoning;
         }
-        if (Vector2.Distance(transform.position, player.position) >= range)
+        if (Vector2.Distance(transform.position, player.position) >= range) 
         {
-            DamageAOE.SetActive(false);
-            nextFire = Time.time + fireRate;
-            Instantiate(BossBullet, transform.position, transform.rotation);
+            if(loverLevelBoss.transform.position.x > player.transform.position.x)
+            {
+                DamageAOE.SetActive(false);
+                nextFire = Time.time + fireRate;
+                Instantiate(BossBullet, transform.position, transform.rotation);
+                loverLevelBoss.sprite = bossBulletspriteLeft;
+            }
+            if (loverLevelBoss.transform.position.x < player.transform.position.x)
+            {
+                DamageAOE.SetActive(false);
+                nextFire = Time.time + fireRate;
+                Instantiate(BossBullet, transform.position, transform.rotation);
+                loverLevelBoss.sprite = bossBulletspriteRight;
+            }
         }
     }
     public void BossMovement()
@@ -81,12 +102,24 @@ public class LoverLevelBossBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("Bullet"))
         {
             health--;
+            StartCoroutine(hitBoss());
+
         }
         if (collidedObject.name.Contains("Arrow"))
         {
             health--;
+            StartCoroutine(hitBoss());
         }
     }
+    private IEnumerator hitBoss()
+    {
+        loverLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.15f);
+
+        loverLevelBoss.color = Color.white;
+    }
+
     public float speed;
     private IEnumerator BossBehaviour()
     {
@@ -111,6 +144,10 @@ public class LoverLevelBossBehaviour : MonoBehaviour
         isMoving = false;
 
         attack();
+
+        yield return new WaitForSeconds(.5f);
+
+        loverLevelBoss.sprite = bossIdleSprite;
 
         loverLevelBoss.color = Color.white;
 

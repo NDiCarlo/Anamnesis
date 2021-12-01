@@ -23,7 +23,7 @@ public class ParentBossBehaviour : MonoBehaviour
     void Update()
     {
         player = GameObject.Find("Player").GetComponent<Transform>();
-        if(health <= 0)
+        if (health <= 0)
         {
             PlayerBehaviourParent pb = GameObject.FindObjectOfType<PlayerBehaviourParent>
                 ();
@@ -44,17 +44,28 @@ public class ParentBossBehaviour : MonoBehaviour
         if (collidedObject.name.Contains("Bullet"))
         {
             health--;
+            StartCoroutine(hitBoss());
         }
         if (collidedObject.name.Contains("Arrow"))
         {
             health--;
+            StartCoroutine(hitBoss());
         }
         if (collidedObject.name.Contains("Weapon Spear"))
         {
             health--;
+            StartCoroutine(hitBoss());
         }
     }
 
+    private IEnumerator hitBoss()
+    {
+        parentLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.1f);
+
+        parentLevelBoss.color = Color.white;
+    }
     public IEnumerator BossBehaviour()
     {
         yield return new WaitForSeconds(3f);
