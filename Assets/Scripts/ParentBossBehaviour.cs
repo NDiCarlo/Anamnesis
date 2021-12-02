@@ -113,11 +113,11 @@ public class ParentBossBehaviour : MonoBehaviour
 
         parentLevelBoss.color = Color.white;
 
-        yield return new WaitForSeconds(.10f);
+        yield return new WaitForSeconds(1f);
 
         parentLevelBoss.color = Color.red;
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
 
         parentLevelBoss.color = Color.white;
 

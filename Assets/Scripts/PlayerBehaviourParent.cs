@@ -103,12 +103,15 @@ public class PlayerBehaviourParent : MonoBehaviour
     private bool isRead;
 
     public bool enablemusicBox;
+
+    public bool enableBullet;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Bullet.SetActive(true);
         enablemusicBox = false;
+        enableBullet = true;
         if (PlayerBehaviour.isRead == true)
         {
             arrowImage.SetActive(true);
@@ -126,12 +129,13 @@ public class PlayerBehaviourParent : MonoBehaviour
         Attack();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            enableBullet = true;
             enableBow = false;
             enableSpear = false;
             weaponBar.sprite = weaponBarHighlighted;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerBehaviour.isRead == true)
-        {
+        { 
             enableBow = true;
             enableSpear = false;
             weaponBar.sprite = weaponBarHighlighted2;
@@ -144,6 +148,7 @@ public class PlayerBehaviourParent : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) && isRead == true)
         {
+            enableBullet = false;
             enableBow = false;
             enableSpear = false;
             enablemusicBox = true;
@@ -158,13 +163,13 @@ public class PlayerBehaviourParent : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == false && enableSpear == false)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == false && enableSpear == false && enableBullet == true)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Bullet, transform.position, transform.rotation);
             Bullet.gameObject.SetActive(true);
         }
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true && enableSpear == false)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Arrow, transform.position, transform.rotation);
@@ -172,7 +177,7 @@ public class PlayerBehaviourParent : MonoBehaviour
             Spear.SetActive(false);
             Arrow.SetActive(true);
         }
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true && enableBow == false)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Spear, transform.position, transform.rotation);
@@ -180,9 +185,8 @@ public class PlayerBehaviourParent : MonoBehaviour
             Arrow.SetActive(false);
             Spear.SetActive(true);
         }
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire &&  enablemusicBox == true)
+        if (Input.GetMouseButtonDown(0) && enablemusicBox == true)
         {
-            nextFire = Time.time + fireRate;
 
             ParentBossBehaviour pb = GameObject.FindObjectOfType<ParentBossBehaviour>
                 ();
@@ -217,6 +221,7 @@ public class PlayerBehaviourParent : MonoBehaviour
     {
         isRead = true;
         musicBoxImage.SetActive(true);
+        enablemusicBox = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -176,7 +176,7 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             Instantiate(Bullet, transform.position, transform.rotation);
             Bullet.gameObject.SetActive(true);
         }
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true && enableSpear == false)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Arrow, transform.position, transform.rotation);
@@ -184,7 +184,7 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             Spear.SetActive(false);
             Arrow.SetActive(true);
         }
-        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == true && enableBow == false)
         {
             nextFire = Time.time + fireRate;
             Instantiate(Spear, transform.position, transform.rotation);
