@@ -84,7 +84,7 @@ public class StationaryEnemyChildLevel : MonoBehaviour
 
             }
         }
-            if (collidedObject.name.Contains("Weapon Spear"))
+            if(collidedObject.name.Contains("Weapon Spear"))
             {
                 health--;
 

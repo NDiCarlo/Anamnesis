@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8502397918869105766}
   - component: {fileID: 1948616135879252652}
   - component: {fileID: -482067132673353672}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ChildScythe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
-  speed: 7
+  speed: 10
   target: {fileID: 7513356442401315181, guid: bcf566ecad9f23940ac813884d3ab9e9, type: 3}
 --- !u!50 &1948616135879252652
 Rigidbody2D:

@@ -31,4 +31,9 @@ public class ButtonBehaviour : MonoBehaviour
     {
         SceneManager.LoadScene("ParentLevel");
     }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1;
+    }
 }

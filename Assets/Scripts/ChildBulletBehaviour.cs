@@ -6,9 +6,7 @@ public class ChildBulletBehaviour : MonoBehaviour
 {
     public float lifeTime = 2f;
     public float speed = 5f;
-    private Vector3 direction;
     private Rigidbody2D rb;
-    Vector3 playerPosition;
 
 
     // Start is called before the first frame update
@@ -16,23 +14,17 @@ public class ChildBulletBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         findPlayer();
-        playerPosition = Camera.main.ScreenToWorldPoint(playerPosition);
-        playerPosition.z = 0f;
-        direction = (playerPosition - transform.position).normalized;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
         ScytheMovement();
     }
 
     public void ScytheMovement()
     {
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 
     public PlayerBehaviourChildLevel target;

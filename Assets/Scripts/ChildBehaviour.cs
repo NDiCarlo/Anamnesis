@@ -11,6 +11,7 @@ public class ChildBehaviour : MonoBehaviour
     public float range = 10f;
     public GameObject DamageAOE;
     public GameObject projectile;
+    public GameObject projectile2;
     public float health = 15f;
     private Rigidbody2D rb;
     public Sprite bossBulletLeft;
@@ -149,7 +150,7 @@ public class ChildBehaviour : MonoBehaviour
             if (childLevelBoss.transform.position.x > player.transform.position.x)
             {
                 DamageAOE.SetActive(false);
-                Instantiate(projectile, transform.position, transform.rotation);
+                Instantiate(projectile2, transform.position, transform.rotation);
                 childLevelBoss.sprite = bossBulletLeft;
             }
             if (childLevelBoss.transform.position.x < player.transform.position.x)

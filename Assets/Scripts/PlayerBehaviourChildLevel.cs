@@ -98,12 +98,28 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public bool RegenHealth;
 
+    public Image weaponBar;
+
+    public Sprite weaponBarHighlighted;
+
+    public Sprite weaponBarHighlighted2;
+
+    public Sprite weaponBarHighlighted3;
+
+    public GameObject arrowImage;
+
+    public GameObject spearImage;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Spear.SetActive(false);
         Bullet.SetActive(true);
+        if(PlayerBehaviour.isRead == true)
+        {
+            arrowImage.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -114,18 +130,21 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             enableBow = false;
             enableSpear = false;
+            weaponBar.sprite = weaponBarHighlighted;
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerBehaviour.isRead == true)
         {
             enableBow = true;
             enableSpear = false;
+            weaponBar.sprite = weaponBarHighlighted2;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && isRead == true)
         {
             enableBow = false;
             enableSpear = true;
-        }
+            weaponBar.sprite = weaponBarHighlighted3;
+}
 
         HealthSprites();
     }
@@ -231,33 +250,39 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             firstroomDialogue.SetActive(true);
             Destroy(RedBox1);
+            Time.timeScale = 0;
 
         }
         if (collidedObject.name.Contains("2nd Open Room Dialogue"))
         {
             secondroomDialogue.SetActive(true);
             Destroy(RedBox2);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("3rd Open Room Dialogue"))
         {
             thirdroomDialogue.SetActive(true);
             Destroy(RedBox3);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
             beforeBossDialogue.SetActive(true);
             Destroy(RedBox4);
             Destroy(RedBox5);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
             afterBossDialogue.SetActive(true);
             Destroy(RedBox6);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
             afterBossclosedDialogue.SetActive(true);
             Destroy(RedBox7);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("InstantiateBossTrigger"))
         {
@@ -275,6 +300,7 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
     {
         Spear.SetActive(true);
         isRead = true;
+        spearImage.SetActive(true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

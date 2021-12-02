@@ -83,11 +83,43 @@ public class PlayerBehaviourParent : MonoBehaviour
     public bool RegenHealth;
 
     public int numberofLevels;
+
+    public Image weaponBar;
+
+    public Sprite weaponBarHighlighted;
+
+    public Sprite weaponBarHighlighted2;
+
+    public Sprite weaponBarHighlighted3;
+
+    public Sprite weaponBarHighlighted4;
+
+    public GameObject arrowImage;
+
+    public GameObject spearImage;
+
+    public GameObject musicBox;
+
+    public GameObject musicBoxImage;
+
+    private bool isRead;
+
+    public bool enablemusicBox;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        enableSpear = false;
+        Bullet.SetActive(true);
+        enablemusicBox = false;
+        if (PlayerBehaviour.isRead == true)
+        {
+            arrowImage.SetActive(true);
+        }
+        if (PlayerBehaviourChildLevel.isRead == true)
+        {
+            spearImage.SetActive(true);
+
+        }
     }
 
     // Update is called once per frame
@@ -98,16 +130,25 @@ public class PlayerBehaviourParent : MonoBehaviour
         {
             enableBow = false;
             enableSpear = false;
+            weaponBar.sprite = weaponBarHighlighted;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerBehaviour.isRead == true)
         {
             enableBow = true;
             enableSpear = false;
+            weaponBar.sprite = weaponBarHighlighted2;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && PlayerBehaviourChildLevel.isRead == true)
         {
             enableBow = false;
             enableSpear = true;
+            weaponBar.sprite = weaponBarHighlighted3;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4) && isRead == true)
+        {
+            enableBow = false;
+            enableSpear = true;
+            weaponBar.sprite = weaponBarHighlighted4;
         }
 
         HealthSprites();
@@ -140,6 +181,15 @@ public class PlayerBehaviourParent : MonoBehaviour
             Arrow.SetActive(false);
             Spear.SetActive(true);
         }
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire &&  enablemusicBox == true)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(Spear, transform.position, transform.rotation);
+            Bullet.SetActive(false);
+            Arrow.SetActive(false);
+            Spear.SetActive(true);
+        }
+
     }
     void Movement()
     {
@@ -154,6 +204,13 @@ public class PlayerBehaviourParent : MonoBehaviour
         movement *= Time.fixedDeltaTime * speed;
 
         rb.MovePosition(rb.position + movement);
+    }
+
+    public void enchantMusicBox()
+    {
+        musicBox.SetActive(true);
+        isRead = true;
+        musicBoxImage.SetActive(true);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -248,19 +305,25 @@ public class PlayerBehaviourParent : MonoBehaviour
         {
             firstroomDialogue.gameObject.SetActive(true);
             Destroy(firstOpenRedBox);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
             beforebossDialogue.gameObject.SetActive(true);
             Destroy(beforeBossRedBox);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
             afterbossDialogue.gameObject.SetActive(true);
+            Destroy(afterBossDialogue);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
             afterbossDialogue.gameObject.SetActive(true);
+            Destroy(afterBossDialogue);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("InstantiateBossTrigger"))
         {

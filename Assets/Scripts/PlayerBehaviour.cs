@@ -91,6 +91,14 @@ public class PlayerBehaviour : MonoBehaviour
     public bool RegenHealth;
 
     public static int numberofLevels;
+
+    public Image weaponBar;
+
+    public Sprite weaponBarHighlighted;
+
+    public Sprite weaponBarHighlighted2;
+
+    public GameObject arrowImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -108,10 +116,12 @@ public class PlayerBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             enableBow = false;
+            weaponBar.sprite = weaponBarHighlighted;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && isRead == true)
         {
             enableBow = true;
+            weaponBar.sprite = weaponBarHighlighted2;
         }
 
         HealthSprites();
@@ -225,37 +235,44 @@ public class PlayerBehaviour : MonoBehaviour
         {
             EnchantWeaponPanel.gameObject.SetActive(true);
             Destroy(RedBox3);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("1st Open Room Dialogue"))
         {
             firstDiagloguePanel.gameObject.SetActive(true);
             Destroy(RedBox1);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("2nd Open Room Dialogue"))
         {
             secondDialoguePanel.gameObject.SetActive(true);
             Destroy(RedBox2);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
             dialoguebeforebossPanel.gameObject.SetActive(true);
             Destroy(RedBox4);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
             dialogueAfterbossPanel.gameObject.SetActive(true);
             Destroy(RedBox5);
+            Time.timeScale = 0;
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
             dialogueAfterbossClosedPanel.gameObject.SetActive(true);
             Destroy(RedBox6);
+            Time.timeScale = 0;
         }
     }
     public void EnchantBow()
     {
         enableBow = true;
         isRead = true;
+        arrowImage.SetActive(true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
