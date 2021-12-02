@@ -98,8 +98,6 @@ public class PlayerBehaviourParent : MonoBehaviour
 
     public GameObject spearImage;
 
-    public GameObject musicBox;
-
     public GameObject musicBoxImage;
 
     private bool isRead;
@@ -147,7 +145,8 @@ public class PlayerBehaviourParent : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4) && isRead == true)
         {
             enableBow = false;
-            enableSpear = true;
+            enableSpear = false;
+            enablemusicBox = true;
             weaponBar.sprite = weaponBarHighlighted4;
         }
 
@@ -184,10 +183,18 @@ public class PlayerBehaviourParent : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire &&  enablemusicBox == true)
         {
             nextFire = Time.time + fireRate;
-            Instantiate(Spear, transform.position, transform.rotation);
+
+            ParentBossBehaviour pb = GameObject.FindObjectOfType<ParentBossBehaviour>
+                ();
+
+            pb.musicBox();
+
             Bullet.SetActive(false);
             Arrow.SetActive(false);
-            Spear.SetActive(true);
+            Spear.SetActive(false);
+            musicBoxImage.SetActive(false);
+            enablemusicBox = false;
+            isRead = false;
         }
 
     }
@@ -208,7 +215,6 @@ public class PlayerBehaviourParent : MonoBehaviour
 
     public void enchantMusicBox()
     {
-        musicBox.SetActive(true);
         isRead = true;
         musicBoxImage.SetActive(true);
     }

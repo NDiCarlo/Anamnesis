@@ -98,7 +98,7 @@ public class ParentBossBehaviour : MonoBehaviour
     }
 
     // Call this function when the music box is activated
-    void musicBox()
+    public void musicBox()
     {
         StopCoroutine(BossBehaviour());
 
