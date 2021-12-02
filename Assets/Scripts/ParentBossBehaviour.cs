@@ -96,4 +96,31 @@ public class ParentBossBehaviour : MonoBehaviour
 
         StartCoroutine(BossBehaviour());
     }
+
+    // Call this function when the music box is activated
+    void musicBox()
+    {
+        StopCoroutine(BossBehaviour());
+
+        StartCoroutine(MusicBoxBehaviour());
+    }
+
+    private IEnumerator MusicBoxBehaviour()
+    {
+        parentLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(2.10f);
+
+        parentLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.10f);
+
+        parentLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.5f);
+
+        parentLevelBoss.color = Color.white;
+
+        StartCoroutine(BossBehaviour());
+    }
 }
