@@ -8,6 +8,7 @@ public class PauseBehaviour : MonoBehaviour
     public GameObject mainMenu;
     public GameObject restart;
     public GameObject resume;
+    public GameObject howToPlay;
 
     public GameObject player;
 
@@ -17,6 +18,7 @@ public class PauseBehaviour : MonoBehaviour
         mainMenu.SetActive(false);
         restart.SetActive(false);
         resume.SetActive(false);
+        howToPlay.SetActive(false);
 
         player.GetComponent<SpriteRenderer>().enabled = true;
     }

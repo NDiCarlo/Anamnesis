@@ -35,6 +35,7 @@ public class GameControllerParent : MonoBehaviour
     public GameObject mainMenu;
     public GameObject restart;
     public GameObject resume;
+    public GameObject howToPlay;
 
     public GameObject ParentBoss;
 
@@ -71,6 +72,7 @@ public class GameControllerParent : MonoBehaviour
             mainMenu.SetActive(true);
             restart.SetActive(true);
             resume.SetActive(true);
+            howToPlay.SetActive(true);
 
             player.GetComponent<SpriteRenderer>().enabled = false;
         }
