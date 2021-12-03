@@ -251,6 +251,11 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             firstroomDialogue.SetActive(true);
             Destroy(RedBox1);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
 
         }
         if (collidedObject.name.Contains("2nd Open Room Dialogue"))
@@ -258,12 +263,22 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             secondroomDialogue.SetActive(true);
             Destroy(RedBox2);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("3rd Open Room Dialogue"))
         {
             thirdroomDialogue.SetActive(true);
             Destroy(RedBox3);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
@@ -271,18 +286,33 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             Destroy(RedBox4);
             Destroy(RedBox5);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
             afterBossDialogue.SetActive(true);
             Destroy(RedBox6);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
             afterBossclosedDialogue.SetActive(true);
             Destroy(RedBox7);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("InstantiateBossTrigger"))
         {
