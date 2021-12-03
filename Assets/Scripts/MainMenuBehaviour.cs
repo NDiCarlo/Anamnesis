@@ -22,13 +22,23 @@ public class MainMenuBehaviour : MonoBehaviour
 
     public void GoToControls()
     {
-       ControlsImage.gameObject.SetActive(true);
-       MainMenuImage.gameObject.SetActive(false);
+        ControlsImage.gameObject.SetActive(true);
+        MainMenuImage.gameObject.SetActive(false);
     }
 
     public void GoBack()
     {
         ControlsImage.gameObject.SetActive(false);
         MainMenuImage.gameObject.SetActive(true);
+    }
+
+    public void LoadControls()
+    {
+        ControlsImage.gameObject.SetActive(true);
+    }
+
+    public void Back()
+    {
+        ControlsImage.gameObject.SetActive(false);
     }
 }

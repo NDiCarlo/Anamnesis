@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
-  speed: 10
+  speed: 20
   target: {fileID: 7513356442401315181, guid: bcf566ecad9f23940ac813884d3ab9e9, type: 3}
 --- !u!50 &6030363100148076257
 Rigidbody2D:

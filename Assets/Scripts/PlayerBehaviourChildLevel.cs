@@ -110,6 +110,8 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
 
     public GameObject spearImage;
 
+    public GameObject bulletImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -256,6 +258,9 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
 
         }
         if (collidedObject.name.Contains("2nd Open Room Dialogue"))
@@ -268,6 +273,10 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
         }
         if (collidedObject.name.Contains("3rd Open Room Dialogue"))
         {
@@ -279,6 +288,10 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
@@ -291,6 +304,10 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
@@ -302,6 +319,10 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
@@ -313,6 +334,10 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
         }
         if (collidedObject.name.Contains("InstantiateBossTrigger"))
         {

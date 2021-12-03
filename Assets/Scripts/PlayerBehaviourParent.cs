@@ -100,11 +100,13 @@ public class PlayerBehaviourParent : MonoBehaviour
 
     public GameObject musicBoxImage;
 
-    private bool isRead;
+    public static bool isRead;
 
     public bool enablemusicBox;
 
     public bool enableBullet;
+
+    public GameObject bulletImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -132,6 +134,7 @@ public class PlayerBehaviourParent : MonoBehaviour
             enableBullet = true;
             enableBow = false;
             enableSpear = false;
+            enablemusicBox = false;
             weaponBar.sprite = weaponBarHighlighted;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && PlayerBehaviour.isRead == true)
@@ -185,8 +188,10 @@ public class PlayerBehaviourParent : MonoBehaviour
             Arrow.SetActive(false);
             Spear.SetActive(true);
         }
-        if (Input.GetMouseButtonDown(0) && enablemusicBox == true)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableSpear == false && enableBow == false && enableBullet == false && enablemusicBox == true)
         {
+
+            nextFire = Time.time + fireRate;
 
             ParentBossBehaviour pb = GameObject.FindObjectOfType<ParentBossBehaviour>
                 ();
@@ -322,6 +327,11 @@ public class PlayerBehaviourParent : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
+            musicBoxImage.SetActive(false);
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
@@ -333,6 +343,11 @@ public class PlayerBehaviourParent : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
+            musicBoxImage.SetActive(false);
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
@@ -344,6 +359,11 @@ public class PlayerBehaviourParent : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
+            musicBoxImage.SetActive(false);
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
@@ -355,6 +375,11 @@ public class PlayerBehaviourParent : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+            spearImage.SetActive(false);
+            musicBoxImage.SetActive(false);
         }
         if (collidedObject.name.Contains("InstantiateBossTrigger"))
         {

@@ -99,6 +99,8 @@ public class PlayerBehaviour : MonoBehaviour
     public Sprite weaponBarHighlighted2;
 
     public GameObject arrowImage;
+
+    public GameObject bulletImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -236,6 +238,14 @@ public class PlayerBehaviour : MonoBehaviour
             EnchantWeaponPanel.gameObject.SetActive(true);
             Destroy(RedBox3);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
         }
         if (collidedObject.name.Contains("1st Open Room Dialogue"))
         {
@@ -247,6 +257,10 @@ public class PlayerBehaviour : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
+
         }
         if (collidedObject.name.Contains("2nd Open Room Dialogue"))
         {
@@ -258,6 +272,9 @@ public class PlayerBehaviour : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
@@ -269,6 +286,9 @@ public class PlayerBehaviour : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
@@ -280,6 +300,9 @@ public class PlayerBehaviour : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
@@ -291,6 +314,9 @@ public class PlayerBehaviour : MonoBehaviour
             health3.enabled = false;
             health4.enabled = false;
             health5.enabled = false;
+            weaponBar.enabled = false;
+            bulletImage.SetActive(false);
+            arrowImage.SetActive(false);
         }
     }
     public void EnchantBow()
