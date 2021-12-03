@@ -32,6 +32,8 @@ public class GameController : MonoBehaviour
     public GameObject mainMenu;
     public GameObject restart;
     public GameObject resume;
+    public GameObject howToPlay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,7 @@ public class GameController : MonoBehaviour
             mainMenu.SetActive(true);
             restart.SetActive(true);
             resume.SetActive(true);
+            howToPlay.SetActive(true);
 
             player.GetComponent<SpriteRenderer>().enabled = false;
         }

@@ -35,6 +35,7 @@ public class GameControllerChildLevel : MonoBehaviour
     public GameObject mainMenu;
     public GameObject restart;
     public GameObject resume;
+    public GameObject howToPlay;
 
     public GameObject ChildBoss;
     // Start is called before the first frame update
@@ -67,6 +68,7 @@ public class GameControllerChildLevel : MonoBehaviour
             mainMenu.SetActive(true);
             restart.SetActive(true);
             resume.SetActive(true);
+            howToPlay.SetActive(true);
 
             player.GetComponent<SpriteRenderer>().enabled = false;
         }
