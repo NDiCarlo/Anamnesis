@@ -242,30 +242,55 @@ public class PlayerBehaviour : MonoBehaviour
             firstDiagloguePanel.gameObject.SetActive(true);
             Destroy(RedBox1);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("2nd Open Room Dialogue"))
         {
             secondDialoguePanel.gameObject.SetActive(true);
             Destroy(RedBox2);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
             dialoguebeforebossPanel.gameObject.SetActive(true);
             Destroy(RedBox4);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
             dialogueAfterbossPanel.gameObject.SetActive(true);
             Destroy(RedBox5);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
             dialogueAfterbossClosedPanel.gameObject.SetActive(true);
             Destroy(RedBox6);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
     }
     public void EnchantBow()

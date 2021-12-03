@@ -317,24 +317,44 @@ public class PlayerBehaviourParent : MonoBehaviour
             firstroomDialogue.gameObject.SetActive(true);
             Destroy(firstOpenRedBox);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("Before Boss Dialogue"))
         {
             beforebossDialogue.gameObject.SetActive(true);
             Destroy(beforeBossRedBox);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("After Boss Closed Dialogue"))
         {
             afterbossDialogue.gameObject.SetActive(true);
             Destroy(afterBossDialogue);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("After Boss Open Dialogue"))
         {
             afterbossDialogue.gameObject.SetActive(true);
             Destroy(afterBossDialogue);
             Time.timeScale = 0;
+            health1.enabled = false;
+            health2.enabled = false;
+            health3.enabled = false;
+            health4.enabled = false;
+            health5.enabled = false;
         }
         if (collidedObject.name.Contains("InstantiateBossTrigger"))
         {
