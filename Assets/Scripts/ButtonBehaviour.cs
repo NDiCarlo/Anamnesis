@@ -52,7 +52,7 @@ public class ButtonBehaviour : MonoBehaviour
         }
         if (PlayerBehaviour.isRead == false)
         {
-            pb.Bullet.SetActive(true);
+            pb.bulletImage.SetActive(true);
             pb.arrowImage.SetActive(false);
             pb.weaponBar.enabled = true;
             pb.health1.enabled = true;
