@@ -161,15 +161,6 @@ public class PlayerBehaviourParent : MonoBehaviour
         }
 
         HealthSprites();
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            transform.position = new Vector2(120.2f, 44.5f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            transform.position = new Vector2(40.4f, -10.1f);
-        }
     }
     void FixedUpdate()
     {
