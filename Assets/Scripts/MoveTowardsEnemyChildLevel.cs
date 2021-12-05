@@ -125,11 +125,11 @@ public class MoveTowardsEnemyChildLevel : MonoBehaviour
         }
         if (collidedObject.name.Contains("Arrow"))
         {
-            health -= 2;
+            health--;
 
             StartCoroutine(hitFeedback());
 
-            if (health <= 0)
+            if (health == 0)
             {
                 Destroy(gameObject);
                 GameControllerChildLevel gc = GameObject.FindObjectOfType<GameControllerChildLevel>

@@ -172,7 +172,7 @@ public class ChildBehaviour : MonoBehaviour
         }
         if (collidedObject.name.Contains("Arrow"))
         {
-            health -= 2;
+            health--;
             StartCoroutine(hitBoss());
         }
         if (collidedObject.name.Contains("Weapon Spear"))
