@@ -138,6 +138,19 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.position = new Vector2(36.2f, 1.7f);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            health = 10;
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene("LoverScene");
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene("LoverLevelOpenScene");
+        }
+
     }
 
     void FixedUpdate()
@@ -426,6 +439,10 @@ public class PlayerBehaviour : MonoBehaviour
         {
             RegenHealth = false;
             health5.sprite = fullHealth;
+            health4.sprite = fullHealth;
+            health3.sprite = fullHealth;
+            health2.sprite = fullHealth;
+            health1.sprite = fullHealth;
         }
             if (health == 9 && RegenHealth == false)
         {

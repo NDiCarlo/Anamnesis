@@ -104,7 +104,7 @@ MonoBehaviour:
   DamageAOE: {fileID: 8832077945822160053}
   projectile: {fileID: 9140847528201443952, guid: 5bd9eea6e9da09040b9523d024402909, type: 3}
   projectile2: {fileID: 3918157113765531197, guid: 57f4dc9af12531d4d809d3db8b21e1a5, type: 3}
-  health: 30
+  health: 10
   bossBulletLeft: {fileID: 21300000, guid: 48c64e6958006b84c8277f682989b63e, type: 3}
   bossBulletRight: {fileID: 21300000, guid: 3f36d321eb5566d49a1177f7b2e60332, type: 3}
   bossLeft: {fileID: 21300000, guid: 0706baa22f578ae48a4da64100b0554c, type: 3}

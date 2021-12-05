@@ -160,9 +160,17 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             transform.position = new Vector2(59.3f, 57.8f);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            transform.position = new Vector2(29.7f, -10.7f);
+            SceneManager.LoadScene("ChildLevelScene");
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene("ChildLevelOpenScene");  
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            health = 10;
         }
     }
 
@@ -462,6 +470,10 @@ public class PlayerBehaviourChildLevel : MonoBehaviour
         {
             RegenHealth = false;
             health5.sprite = fullHealth;
+                        health4.sprite = fullHealth;
+            health3.sprite = fullHealth;
+            health2.sprite = fullHealth;
+            health1.sprite = fullHealth;
         }
         if (health == 9 && RegenHealth == false)
         {
