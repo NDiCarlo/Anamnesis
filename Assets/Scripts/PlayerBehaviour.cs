@@ -22,6 +22,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     public float fireRate;
 
+    public float arrowRate;
+
     public float nextFire;
 
     public GameObject TriggerHallwayEnemies;
@@ -159,7 +161,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true)
         {
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + arrowRate;
             Instantiate(Arrow, transform.position, transform.rotation);
             Arrow.SetActive(true);
             Bullet.SetActive(false);

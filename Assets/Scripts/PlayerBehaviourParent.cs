@@ -20,6 +20,8 @@ public class PlayerBehaviourParent : MonoBehaviour
 
     public float fireRate;
 
+    public float arrowRate;
+
     public float nextFire;
 
     public GameObject weaponSpear;
@@ -174,7 +176,7 @@ public class PlayerBehaviourParent : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire && enableBow == true && enableSpear == false)
         {
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + arrowRate;
             Instantiate(Arrow, transform.position, transform.rotation);
             Bullet.SetActive(false);
             Spear.SetActive(false);
