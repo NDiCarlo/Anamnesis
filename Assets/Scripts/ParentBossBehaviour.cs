@@ -107,17 +107,18 @@ public class ParentBossBehaviour : MonoBehaviour
 
     private IEnumerator MusicBoxBehaviour()
     {
+
         parentLevelBoss.color = Color.red;
 
-        yield return new WaitForSeconds(2.10f);
+        yield return new WaitForSeconds(2f);
 
         parentLevelBoss.color = Color.white;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
 
         parentLevelBoss.color = Color.red;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
 
         parentLevelBoss.color = Color.white;
 
