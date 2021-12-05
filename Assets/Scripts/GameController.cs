@@ -67,10 +67,6 @@ public class GameController : MonoBehaviour
             player.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SceneManager.LoadScene("ParentLevelOpen");
-        }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
