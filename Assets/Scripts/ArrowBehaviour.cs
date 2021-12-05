@@ -8,6 +8,8 @@ public class ArrowBehaviour : MonoBehaviour
 
     public float speed;
 
+    public float arrowRotateSpeed;
+
     Vector3 mousePosition;
 
     private Vector3 direction;
@@ -25,7 +27,7 @@ public class ArrowBehaviour : MonoBehaviour
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, arrowRotateSpeed * Time.deltaTime);
         arrowMovement();
 
 

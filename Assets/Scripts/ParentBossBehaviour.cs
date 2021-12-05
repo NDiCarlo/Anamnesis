@@ -48,7 +48,7 @@ public class ParentBossBehaviour : MonoBehaviour
         }
         if (collidedObject.name.Contains("Arrow"))
         {
-            health--;
+            health -= 2;
             StartCoroutine(hitBoss());
         }
         if (collidedObject.name.Contains("Weapon Spear"))

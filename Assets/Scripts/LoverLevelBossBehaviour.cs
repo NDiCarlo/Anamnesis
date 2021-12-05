@@ -107,7 +107,7 @@ public class LoverLevelBossBehaviour : MonoBehaviour
         }
         if (collidedObject.name.Contains("Arrow"))
         {
-            health--;
+            health -= 2;
             StartCoroutine(hitBoss());
         }
     }

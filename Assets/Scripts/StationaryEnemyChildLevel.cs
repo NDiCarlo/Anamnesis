@@ -121,11 +121,11 @@ public class StationaryEnemyChildLevel : MonoBehaviour
             }
         if (collidedObject.name.Contains("Arrow"))
         {
-            health--;
+            health -= 2;
 
             StartCoroutine(hitFeedback());
 
-            if (health == 0)
+            if (health <= 0)
             {
                 Destroy(gameObject);
                 GameControllerChildLevel gc = GameObject.FindObjectOfType<GameControllerChildLevel>
