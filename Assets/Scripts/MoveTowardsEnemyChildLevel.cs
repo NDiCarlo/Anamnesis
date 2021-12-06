@@ -1,3 +1,14 @@
+/*****************************************************************************
+// File Name :         MoveTowardsEnemyChildLevel.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 25, 2021
+//
+// Brief Description: This is how the MoveTowards enemy moves
+for the Child level, collision, and how the enemy gets smaller when hit and hit
+feedback
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

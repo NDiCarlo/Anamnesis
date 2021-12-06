@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name :         ParentBossBehaviour.cs
+// Author :            Diego Hudelson
+// Creation Date :     November 15, 2021
+//
+// Brief Description : This script is how the boss reacts and what the boss 
+does when it is spawned in the parent level.
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +21,16 @@ public class ParentBossBehaviour : MonoBehaviour
     public GameObject telegraph;
     public GameObject attack;
     public float health = 50;
+    private IEnumerator ie;
+    private IEnumerator ie2;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(BossBehaviour());
+        ie = BossBehaviour();
+        ie2 = BossBehaviourTwo();
+
+        StartCoroutine(ie);
     }
 
     // Update is called once per frame
@@ -94,13 +108,15 @@ public class ParentBossBehaviour : MonoBehaviour
 
         Instantiate(attack, memorizePos, transform.rotation);
 
-        StartCoroutine(BossBehaviour());
+        ie = BossBehaviour();
+
+        StartCoroutine(ie);
     }
 
     // Call this function when the music box is activated
     public void musicBox()
     {
-        StopCoroutine(BossBehaviour());
+        StopCoroutine(ie);
 
         StartCoroutine(MusicBoxBehaviour());
     }
@@ -110,7 +126,7 @@ public class ParentBossBehaviour : MonoBehaviour
 
         parentLevelBoss.color = Color.red;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         parentLevelBoss.color = Color.white;
 
@@ -122,6 +138,39 @@ public class ParentBossBehaviour : MonoBehaviour
 
         parentLevelBoss.color = Color.white;
 
-        StartCoroutine(BossBehaviour());
+        StartCoroutine(ie2);
+    }
+
+    public IEnumerator BossBehaviourTwo()
+    {
+        yield return new WaitForSeconds(3f);
+
+        parentLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.10f);
+
+        parentLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.10f);
+
+        parentLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.5f);
+
+        parentLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.5f);
+
+        Vector3 memorizePos = player.position;
+
+        Instantiate(telegraph, memorizePos, transform.rotation);
+
+        yield return new WaitForSeconds(.3f);
+
+        Instantiate(attack, memorizePos, transform.rotation);
+
+        ie2 = BossBehaviourTwo();
+
+        StartCoroutine(ie2);
     }
 }

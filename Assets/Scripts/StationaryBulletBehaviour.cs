@@ -1,3 +1,16 @@
+/*****************************************************************************
+// File Name :         StationaryBulletBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 25, 2021
+//
+// Brief Description: This is how the bullet in the Lover level finds
+its target and is shot from the stationary enemies in the child level,
+it also is how when the bullet collides with other objects it destroys
+the bullet
+
+*****************************************************************************/
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

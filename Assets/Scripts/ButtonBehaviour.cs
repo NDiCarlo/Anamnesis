@@ -1,3 +1,14 @@
+/*****************************************************************************
+// File Name :         ButtonBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 25, 2021
+//
+// Brief Description: This is how some buttons and doors lead to scenes
+in the game also how the game behind a panel pauses and UI reappears when
+the panel goes away
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

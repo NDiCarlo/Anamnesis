@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         WeaponSpearBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 25, 2021
+//
+// Brief Description: This is the weapon spear behaviour. This is how the
+weapon is able to spawn and go towards the mouse position.
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         GameControllerChildLevel.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 25, 2021
+//
+// Brief Description : Spawns all the enemies in the child level, and removes
+barricades based on how many enemies are killed. Also spawns the boss.
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

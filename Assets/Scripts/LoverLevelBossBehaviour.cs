@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         LoverLevelBossBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     October 25, 2021
+//
+// Brief Description: This is the Behaviour of the Lover Level Boss
+This is how the boss moves and does its attack
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
