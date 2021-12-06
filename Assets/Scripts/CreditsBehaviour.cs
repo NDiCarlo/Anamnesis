@@ -1,5 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+/*****************************************************************************
+// File Name :         CreditsBehaviour.cs
+// Author :            Diego Hudelson
+// Creation Date :     November 25, 2021
+//
+// Brief Description : This just allowed an old version of the credits scene 
+to work
+*****************************************************************************/
 using UnityEngine;
 
 public class CreditsBehaviour : MonoBehaviour
