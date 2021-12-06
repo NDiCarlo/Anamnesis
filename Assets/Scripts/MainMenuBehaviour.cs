@@ -10,6 +10,8 @@ public class MainMenuBehaviour : MonoBehaviour
     public GameObject ControlsImage;
 
     public GameObject MainMenuImage;
+
+    public GameObject CreditsImage;
     public void ExitButton()
     {
         Application.Quit();
@@ -30,6 +32,7 @@ public class MainMenuBehaviour : MonoBehaviour
     {
         ControlsImage.gameObject.SetActive(false);
         MainMenuImage.gameObject.SetActive(true);
+        CreditsImage.gameObject.SetActive(false);
     }
 
     public void LoadControls()
@@ -40,5 +43,15 @@ public class MainMenuBehaviour : MonoBehaviour
     public void Back()
     {
         ControlsImage.gameObject.SetActive(false);
+    }
+
+    public void LoadCredits()
+    {
+        CreditsImage.gameObject.SetActive(true);
+    }
+
+    public void LoadCredits1()
+    {
+        SceneManager.LoadScene("Credits");
     }
 }
