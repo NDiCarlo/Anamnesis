@@ -22,11 +22,13 @@ public class ParentBossBehaviour : MonoBehaviour
     public GameObject attack;
     public float health = 50;
     private IEnumerator ie;
+    private IEnumerator ie2;
 
     // Start is called before the first frame update
     void Start()
     {
         ie = BossBehaviour();
+        ie2 = BossBehaviourTwo();
 
         StartCoroutine(ie);
     }
@@ -122,7 +124,7 @@ public class ParentBossBehaviour : MonoBehaviour
 
         parentLevelBoss.color = Color.red;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         parentLevelBoss.color = Color.white;
 
@@ -134,6 +136,37 @@ public class ParentBossBehaviour : MonoBehaviour
 
         parentLevelBoss.color = Color.white;
 
-        StartCoroutine(ie);
+        StartCoroutine(ie2);
+    }
+
+    public IEnumerator BossBehaviourTwo()
+    {
+        yield return new WaitForSeconds(3f);
+
+        parentLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.10f);
+
+        parentLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.10f);
+
+        parentLevelBoss.color = Color.red;
+
+        yield return new WaitForSeconds(.5f);
+
+        parentLevelBoss.color = Color.white;
+
+        yield return new WaitForSeconds(.5f);
+
+        Vector3 memorizePos = player.position;
+
+        Instantiate(telegraph, memorizePos, transform.rotation);
+
+        yield return new WaitForSeconds(.3f);
+
+        Instantiate(attack, memorizePos, transform.rotation);
+
+        StartCoroutine(ie2);
     }
 }
