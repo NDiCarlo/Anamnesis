@@ -161,27 +161,6 @@ public class PlayerBehaviourParent : MonoBehaviour
         }
 
         HealthSprites();
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            transform.position = new Vector2(120.2f, 44.5f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            transform.position = new Vector2(40.4f, -10.1f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            health = 10;
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SceneManager.LoadScene("ParentLevel");
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SceneManager.LoadScene("ParentLevelOpen");
-        }
     }
     void FixedUpdate()
     {
@@ -490,10 +469,6 @@ public class PlayerBehaviourParent : MonoBehaviour
         {
             RegenHealth = false;
             health5.sprite = fullHealth;
-            health4.sprite = fullHealth;
-            health3.sprite = fullHealth;
-            health2.sprite = fullHealth;
-            health1.sprite = fullHealth;
         }
         if (health == 9 && RegenHealth == false)
         {
