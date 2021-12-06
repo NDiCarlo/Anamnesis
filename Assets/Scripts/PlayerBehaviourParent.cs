@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         PlayerBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 15, 2021
+//
+// Brief Description : This is everything the player does in the ParentLevel, how the player
+shoots, moves , changes weapons, and triggers for enemies to spawn, and collisions
+of bullets or enemies 
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

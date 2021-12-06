@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name :         ChildBehaviour.cs
+// Author :            Diego Hudelson
+// Creation Date :     November 25, 2021
+//
+// Brief Description : This script is the behaviour of the boss in the child
+level and how the boss reacts
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

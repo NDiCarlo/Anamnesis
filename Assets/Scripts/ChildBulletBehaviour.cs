@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         ChildBulletBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     October 25, 2021
+//
+// Brief Description: This is how the child bullet is able to move
+and when it collides with certain object it destroys itself
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name :         ArrowBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     November 18, 2021
+//
+// Brief Description : This is how fast the arrow rotates and the speed
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

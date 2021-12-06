@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name :         ActivateArt.cs
+// Author :            Justin Clemens
+// Creation Date :     November 21, 2021
+//
+// Brief Description : Just sets the Art Gameobject to true
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

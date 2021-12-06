@@ -1,3 +1,14 @@
+/*****************************************************************************
+// File Name :         PauseBehaviour.cs
+// Author :            Justin Clemens, Diego Hudelson
+// Creation Date :     October 25, 2021
+//
+// Brief Description: This is how the game is able to be paused and what 
+buttons come up when you hit p on your keyboard. It is also how some buttons
+load a certain scene
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

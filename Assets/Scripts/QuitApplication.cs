@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         QuitApplication.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     November 25, 2021
+//
+// Brief Description: This is how ypu are able to exit out of the exported
+game
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

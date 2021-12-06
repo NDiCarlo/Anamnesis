@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name :         ParentBossBehaviour.cs
+// Author :            Diego Hudelson
+// Creation Date :     November 15, 2021
+//
+// Brief Description : This script is how the boss reacts and what the boss 
+does when it is spawned in the parent level.
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

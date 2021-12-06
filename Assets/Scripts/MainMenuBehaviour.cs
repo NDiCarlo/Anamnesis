@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name :         MainMenuBehaviour.cs
+// Author :            Justin Clemens, Nolan DiCarlo
+// Creation Date :     October 23, 2021
+//
+// Brief Description : Enables and disables the images on the Main Menu 
+Screen so the music can continue to play throughout the scene. 
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
