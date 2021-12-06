@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         GameController.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 23, 2021
+//
+// Brief Description : This script allows all the enemies to spawn in the lover
+level and removes all barricades. Also allows the lover level boss to spawn
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

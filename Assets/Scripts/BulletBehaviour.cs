@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :        BulletBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 25, 2021
+//
+// Brief Description: This is how the movement of the Player bullet
+and when it collides with certain things in game it gets destroyed
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

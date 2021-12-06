@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name :         UIButtonBehaviour.cs
+// Author :            Nolan DiCarlo, Justin Clemens
+// Creation Date :     October 23, 2021
+//
+// Brief Description : Loads scenes on the dialogues scenes and restarts the
+scene
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

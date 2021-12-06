@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         BossBulletBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     October 25, 2021
+//
+// Brief Description: This is how the boss finds its target and shoots
+towards the player
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

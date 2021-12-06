@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name :         DialogueB.cs
+// Author :            Nolan DiCarlo
+// Creation Date :     September 25, 2021
+//
+// Brief Description: This is the script on how the text is able to
+be scrolling text and go across the screen
+
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

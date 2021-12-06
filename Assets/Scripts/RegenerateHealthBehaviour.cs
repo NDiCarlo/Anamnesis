@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name :         RegenerateHealthBehaviour.cs
+// Author :            Nolan DiCarlo
+// Creation Date :    November 11, 2021
+//
+// Brief Description: This is how the player regenereates health in closed
+scenes after not taking damage for a certain amount of time.
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
