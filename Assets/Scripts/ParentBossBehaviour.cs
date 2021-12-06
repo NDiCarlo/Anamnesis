@@ -108,6 +108,8 @@ public class ParentBossBehaviour : MonoBehaviour
 
         Instantiate(attack, memorizePos, transform.rotation);
 
+        ie = BossBehaviour();
+
         StartCoroutine(ie);
     }
 
@@ -166,6 +168,8 @@ public class ParentBossBehaviour : MonoBehaviour
         yield return new WaitForSeconds(.3f);
 
         Instantiate(attack, memorizePos, transform.rotation);
+
+        ie2 = BossBehaviourTwo();
 
         StartCoroutine(ie2);
     }
