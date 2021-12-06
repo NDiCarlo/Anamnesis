@@ -12,11 +12,14 @@ public class ParentBossBehaviour : MonoBehaviour
     public GameObject telegraph;
     public GameObject attack;
     public float health = 50;
+    private IEnumerator ie;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(BossBehaviour());
+        ie = BossBehaviour();
+
+        StartCoroutine(ie);
     }
 
     // Update is called once per frame
@@ -94,13 +97,13 @@ public class ParentBossBehaviour : MonoBehaviour
 
         Instantiate(attack, memorizePos, transform.rotation);
 
-        StartCoroutine(BossBehaviour());
+        StartCoroutine(ie);
     }
 
     // Call this function when the music box is activated
     public void musicBox()
     {
-        StopCoroutine(BossBehaviour());
+        StopCoroutine(ie);
 
         StartCoroutine(MusicBoxBehaviour());
     }
@@ -122,6 +125,6 @@ public class ParentBossBehaviour : MonoBehaviour
 
         parentLevelBoss.color = Color.white;
 
-        StartCoroutine(BossBehaviour());
+        StartCoroutine(ie);
     }
 }
